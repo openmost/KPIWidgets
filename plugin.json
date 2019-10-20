@@ -1,0 +1,29 @@
+{
+    "name": "SimpleVisits",
+    "description": "Affichez clairement et simplement votre nombre de visites sur votre tableau de bord !",
+    "version": "0.1.0",
+    "theme": false,
+    "require": {
+        "piwik": ">=3.0.3-stable,<4.0.0-b1"
+    },
+    "authors": [
+        {
+            "name": "Ronan Chardonneau",
+            "email": "",
+            "homepage": "https://twitter.com/chardonneaur"
+        }
+    ],
+    "support": {
+        "email": "",
+        "issues": "",
+        "forum": "",
+        "irc": "",
+        "wiki": "",
+        "source": "",
+        "docs": "",
+        "rss": ""
+    },
+    "homepage": "",
+    "license": "GPL v3+",
+    "keywords": ["SimpleVisits", "Visits", "Simple", "Show", "Counter"]
+}
