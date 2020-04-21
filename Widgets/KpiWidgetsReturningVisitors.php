@@ -1,11 +1,11 @@
 <?php
 
-namespace Piwik\Plugins\SimpleKpi\Widgets;
+namespace Piwik\Plugins\KpiWidgets\Widgets;
 
 use Piwik\Widget\Widget;
 use Piwik\Widget\WidgetConfig;
 
-class SimpleKpiPageViews extends Widget
+class KpiWidgetsReturningVisitors extends Widget
 {
 
     /**
@@ -15,9 +15,9 @@ class SimpleKpiPageViews extends Widget
      */
     public static function configure(WidgetConfig $config)
     {
-        $config->setCategoryId('Simple KPI');
+        $config->setCategoryId('KPI Widgets');
 
-        $config->setName('General_ColumnPageviews');
+        $config->setName('General_ReturningVisitor');
     }
 
 
@@ -30,7 +30,7 @@ class SimpleKpiPageViews extends Widget
     {
         $result = \Piwik\API\Request::processRequest('API.get', ['format' => 'PHP']);
 
-        return $this->renderTemplate('widget', ['value' => $result['nb_pageviews']]);
+        return $this->renderTemplate('widget', ['value' => $result['nb_visits_returning']]);
     }
 
 }

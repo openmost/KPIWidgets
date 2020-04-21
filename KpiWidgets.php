@@ -6,9 +6,9 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\SimpleKpi;
+namespace Piwik\Plugins\KpiWidgets;
 
-class SimpleKpi extends \Piwik\Plugin
+class KpiWidgets extends \Piwik\Plugin
 {
     public function registerEvents()
     {
@@ -19,6 +19,6 @@ class SimpleKpi extends \Piwik\Plugin
 
     public function getStylesheetFiles(&$files)
     {
-        $files[] = "plugins/SimpleKPI/stylesheets/plugin.less";
+        $files[] = "plugins/KpiWidgets/stylesheets/plugin.less";
     }
 }

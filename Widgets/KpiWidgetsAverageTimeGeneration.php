@@ -1,11 +1,11 @@
 <?php
 
-namespace Piwik\Plugins\SimpleKpi\Widgets;
+namespace Piwik\Plugins\KpiWidgets\Widgets;
 
 use Piwik\Widget\Widget;
 use Piwik\Widget\WidgetConfig;
 
-class SimpleKpiSearches extends Widget
+class KpiWidgetsAverageTimeGeneration extends Widget
 {
 
     /**
@@ -15,9 +15,9 @@ class SimpleKpiSearches extends Widget
      */
     public static function configure(WidgetConfig $config)
     {
-        $config->setCategoryId('Simple KPI');
+        $config->setCategoryId('KPI Widgets');
 
-        $config->setName('General_NbSearches');
+        $config->setName('General_ColumnAverageGenerationTime');
     }
 
 
@@ -30,7 +30,7 @@ class SimpleKpiSearches extends Widget
     {
         $result = \Piwik\API\Request::processRequest('API.get', ['format' => 'PHP']);
 
-        return $this->renderTemplate('widget', ['value' => $result['nb_searches']]);
+        return $this->renderTemplate('widget', ['value' => $result['avg_time_generation']]);
     }
 
 }

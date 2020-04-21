@@ -1,11 +1,11 @@
 <?php
 
-namespace Piwik\Plugins\SimpleKpi\Widgets;
+namespace Piwik\Plugins\KpiWidgets\Widgets;
 
 use Piwik\Widget\Widget;
 use Piwik\Widget\WidgetConfig;
 
-class SimpleKpiReturningUsers extends Widget
+class KpiWidgetsSearches extends Widget
 {
 
     /**
@@ -15,9 +15,9 @@ class SimpleKpiReturningUsers extends Widget
      */
     public static function configure(WidgetConfig $config)
     {
-        $config->setCategoryId('Simple KPI');
+        $config->setCategoryId('KPI Widgets');
 
-        $config->setName('SimpleKpi_ReturningUsers');
+        $config->setName('General_NbSearches');
     }
 
 
@@ -30,7 +30,7 @@ class SimpleKpiReturningUsers extends Widget
     {
         $result = \Piwik\API\Request::processRequest('API.get', ['format' => 'PHP']);
 
-        return $this->renderTemplate('widget', ['value' => $result['nb_users_returning']]);
+        return $this->renderTemplate('widget', ['value' => $result['nb_searches']]);
     }
 
 }

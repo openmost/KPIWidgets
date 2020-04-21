@@ -1,16 +1,33 @@
 ## Documentation
 
-This theme use LESS to override current CSS. All files and assets are in the "stylesheets" folder at the root of the theme.
-To make it more readable, all differents parts are splitted in the "component" folder.
+This plugin use the Matomo internal API to work, no additional code needed.
 
-If you want to contribute, please download the folder and continue in this direction using small and maintainable components. 
+If you want to contribute, please download the folder and continue in this direction using small and maintainable components and PHP Class. 
 
-Consider this is my first Matomo theme, be compliant and please tell me how to make it better if you see any errors.
+Consider this is my first Matomo plugin, be compliant and please tell me how to make it better if you see any errors.
 
-### Overrided componants
-- Page card style
-- Dashboard widgets
-- Header
-- Site menu
-- Search bar
-- Sparkline (thank to https://lw1.at for showing the right way)
+### Available Widgets
+- Actions per visits
+- Average time generation
+- Average time on site
+- Bounce rate
+- Conversion rate
+- Conversions
+- Downloads
+- Keywords
+- Max Actions
+- Outlinks
+- Page views
+- Returning users
+- Returning visitors
+- Revenue
+- Searches
+- Unique downloads
+- Unique outlinks
+- Unique page views
+- Unique returning visitors
+- Unique visitors
+- Unique users
+- Unique visits
+
+Want more ? Ask me !

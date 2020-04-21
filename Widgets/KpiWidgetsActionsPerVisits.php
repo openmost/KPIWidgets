@@ -1,11 +1,11 @@
 <?php
 
-namespace Piwik\Plugins\SimpleKpi\Widgets;
+namespace Piwik\Plugins\KpiWidgets\Widgets;
 
 use Piwik\Widget\Widget;
 use Piwik\Widget\WidgetConfig;
 
-class SimpleKpiUniqueOutlinks extends Widget
+class KpiWidgetsActionsPerVisits extends Widget
 {
 
     /**
@@ -15,9 +15,9 @@ class SimpleKpiUniqueOutlinks extends Widget
      */
     public static function configure(WidgetConfig $config)
     {
-        $config->setCategoryId('Simple KPI');
+        $config->setCategoryId('KPI Widgets');
 
-        $config->setName('SimpleKpi_UniqueOutlinks');
+        $config->setName('General_ColumnActionsPerVisit');
     }
 
 
@@ -30,7 +30,7 @@ class SimpleKpiUniqueOutlinks extends Widget
     {
         $result = \Piwik\API\Request::processRequest('API.get', ['format' => 'PHP']);
 
-        return $this->renderTemplate('widget', ['value' => $result['nb_uniq_outlinks']]);
+        return $this->renderTemplate('widget', ['value' => $result['nb_actions_per_visit']]);
     }
 
 }

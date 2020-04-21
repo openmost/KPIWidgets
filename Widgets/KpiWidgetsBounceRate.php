@@ -1,11 +1,11 @@
 <?php
 
-namespace Piwik\Plugins\SimpleKpi\Widgets;
+namespace Piwik\Plugins\KpiWidgets\Widgets;
 
 use Piwik\Widget\Widget;
 use Piwik\Widget\WidgetConfig;
 
-class SimpleKpikeywords extends Widget
+class KpiWidgetsBounceRate extends Widget
 {
 
     /**
@@ -15,9 +15,9 @@ class SimpleKpikeywords extends Widget
      */
     public static function configure(WidgetConfig $config)
     {
-        $config->setCategoryId('Simple KPI');
+        $config->setCategoryId('KPI Widgets');
 
-        $config->setName('General_ColumnKeyword');
+        $config->setName('General_ColumnBounceRate');
     }
 
 
@@ -30,7 +30,7 @@ class SimpleKpikeywords extends Widget
     {
         $result = \Piwik\API\Request::processRequest('API.get', ['format' => 'PHP']);
 
-        return $this->renderTemplate('widget', ['value' => $result['nb_keywords']]);
+        return $this->renderTemplate('widget', ['value' => $result['bounce_rate']]);
     }
 
 }

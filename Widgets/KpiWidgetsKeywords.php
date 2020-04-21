@@ -1,11 +1,11 @@
 <?php
 
-namespace Piwik\Plugins\SimpleKpi\Widgets;
+namespace Piwik\Plugins\KpiWidgets\Widgets;
 
 use Piwik\Widget\Widget;
 use Piwik\Widget\WidgetConfig;
 
-class SimpleKpiVisits extends Widget
+class KpiWidgetskeywords extends Widget
 {
 
     /**
@@ -15,9 +15,9 @@ class SimpleKpiVisits extends Widget
      */
     public static function configure(WidgetConfig $config)
     {
-        $config->setCategoryId('Simple KPI');
+        $config->setCategoryId('KPI Widgets');
 
-        $config->setName('General_ColumnNbVisits');
+        $config->setName('General_ColumnKeyword');
     }
 
 
@@ -30,7 +30,7 @@ class SimpleKpiVisits extends Widget
     {
         $result = \Piwik\API\Request::processRequest('API.get', ['format' => 'PHP']);
 
-        return $this->renderTemplate('widget', ['value' => $result['nb_visits']]);
+        return $this->renderTemplate('widget', ['value' => $result['nb_keywords']]);
     }
 
 }

@@ -1,11 +1,11 @@
 <?php
 
-namespace Piwik\Plugins\SimpleKpi\Widgets;
+namespace Piwik\Plugins\KpiWidgets\Widgets;
 
 use Piwik\Widget\Widget;
 use Piwik\Widget\WidgetConfig;
 
-class SimpleKpiAverageTimeOnSite extends Widget
+class KpiWidgetsUniqueDownloads extends Widget
 {
 
     /**
@@ -15,9 +15,9 @@ class SimpleKpiAverageTimeOnSite extends Widget
      */
     public static function configure(WidgetConfig $config)
     {
-        $config->setCategoryId('Simple KPI');
+        $config->setCategoryId('KPI Widgets');
 
-        $config->setName('General_ColumnAvgTimeOnSite');
+        $config->setName('KpiWidgets_UniqueDownloads');
     }
 
 
@@ -30,9 +30,7 @@ class SimpleKpiAverageTimeOnSite extends Widget
     {
         $result = \Piwik\API\Request::processRequest('API.get', ['format' => 'PHP']);
 
-        $value = gmdate('i \m\i\n s\s', $result['avg_time_on_site']);
-
-        return $this->renderTemplate('widget', ['value' => $value]);
+        return $this->renderTemplate('widget', ['value' => $result['nb_uniq_downloads']]);
     }
 
 }

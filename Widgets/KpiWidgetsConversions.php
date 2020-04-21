@@ -1,11 +1,11 @@
 <?php
 
-namespace Piwik\Plugins\SimpleKpi\Widgets;
+namespace Piwik\Plugins\KpiWidgets\Widgets;
 
 use Piwik\Widget\Widget;
 use Piwik\Widget\WidgetConfig;
 
-class SimpleKpiConversionRate extends Widget
+class KpiWidgetsConversions extends Widget
 {
 
     /**
@@ -15,9 +15,9 @@ class SimpleKpiConversionRate extends Widget
      */
     public static function configure(WidgetConfig $config)
     {
-        $config->setCategoryId('Simple KPI');
+        $config->setCategoryId('KPI Widgets');
 
-        $config->setName('General_ColumnConversionRate');
+        $config->setName('General_ColumnKeyword');
     }
 
 
@@ -30,7 +30,7 @@ class SimpleKpiConversionRate extends Widget
     {
         $result = \Piwik\API\Request::processRequest('API.get', ['format' => 'PHP']);
 
-        return $this->renderTemplate('widget', ['value' => $result['conversion_rate']]);
+        return $this->renderTemplate('widget', ['value' => $result['nb_conversions']]);
     }
 
 }

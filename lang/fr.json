@@ -1,5 +1,7 @@
 {
-  "SimpleKpi": {
+  "KpiWidgets": {
+    "PageViews": "Pages vues",
+    "UniquePageViews": "Pages vues uniques",
     "UniqueDownloads": "Téléchargements uniques",
     "UniqueOutlinks": "Liens sortant uniques",
     "ReturningUsers": "Utilisateurs connus",
