@@ -1,7 +1,7 @@
 {
-    "name": "KPIWidgets",
+    "name": "KpiWidgets",
     "description": "Widget for KPI to get better readability",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "theme": false,
     "require": {
         "piwik": ">=3.13.1-stable,<4.0.0-b1"
@@ -9,7 +9,7 @@
     "homepage": "https://lazuli.agency",
     "license": "GPL v3+",
     "keywords": [
-        "SimpleKPI", "KPI", "Visits", "Pages", "Sessions", "Visitors", "Users"
+        "KpiWidgets", "KPI", "Visits", "Pages", "Sessions", "Visitors", "Users"
     ],
     "support": {
         "email": "contact@ronan-hello.fr",
