@@ -1,29 +1,29 @@
 {
-    "name": "SimpleVisits",
-    "description": "Affichez clairement et simplement votre nombre de visites sur votre tableau de bord !",
+    "name": "SimpleKPI",
+    "description": "Widget for KPI to get better readability",
     "version": "0.1.0",
     "theme": false,
     "require": {
-        "piwik": ">=3.0.3-stable,<4.0.0-b1"
+        "piwik": ">=3.13.1-stable,<4.0.0-b1"
+    },
+    "homepage": "https://lazuli.agency",
+    "license": "GPL v3+",
+    "keywords": [
+        "SimpleKPI", "KPI", "Visits", "Pages", "Sessions", "Visitors", "Users"
+    ],
+    "support": {
+        "email": "contact@ronan-hello.fr",
+        "issues": "https://lazuli.agency",
+        "source": "https://lazuli.agency"
     },
     "authors": [
         {
-            "name": "Ronan Chardonneau",
-            "email": "",
-            "homepage": "https://twitter.com/chardonneaur"
+            "name": "Ronan HELLO",
+            "email": "contact@ronan-hello.fr",
+            "homepage": "https://ronan-hello.fr"
         }
     ],
-    "support": {
-        "email": "",
-        "issues": "",
-        "forum": "",
-        "irc": "",
-        "wiki": "",
-        "source": "",
-        "docs": "",
-        "rss": ""
-    },
-    "homepage": "",
-    "license": "GPL v3+",
-    "keywords": ["SimpleVisits", "Visits", "Simple", "Show", "Counter"]
+    "donate": {
+        "paypal": "ronan56.hello@gmail.com"
+    }
 }
