@@ -1,11 +1,11 @@
 <?php
 
-namespace Piwik\Plugins\KpiWidgets\Widgets;
+namespace Piwik\Plugins\KPIWidgets\Widgets;
 
 use Piwik\Widget\Widget;
 use Piwik\Widget\WidgetConfig;
 
-class KpiWidgetsUniqueOutlinks extends Widget
+class KPIWidgetsUniqueOutlinks extends Widget
 {
 
     /**
@@ -17,7 +17,7 @@ class KpiWidgetsUniqueOutlinks extends Widget
     {
         $config->setCategoryId('KPI Widgets');
 
-        $config->setName('KpiWidgets_UniqueOutlinks');
+        $config->setName('KPIWidgets_UniqueOutlinks');
     }
 
 

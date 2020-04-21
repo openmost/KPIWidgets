@@ -1,11 +1,11 @@
 <?php
 
-namespace Piwik\Plugins\KpiWidgets\Widgets;
+namespace Piwik\Plugins\KPIWidgets\Widgets;
 
 use Piwik\Widget\Widget;
 use Piwik\Widget\WidgetConfig;
 
-class KpiWidgetsUsers extends Widget
+class KPIWidgetsUsers extends Widget
 {
 
     /**

@@ -1,11 +1,11 @@
 <?php
 
-namespace Piwik\Plugins\KpiWidgets\Widgets;
+namespace Piwik\Plugins\KPIWidgets\Widgets;
 
 use Piwik\Widget\Widget;
 use Piwik\Widget\WidgetConfig;
 
-class KpiWidgetsPageViews extends Widget
+class KPIWidgetsPageViews extends Widget
 {
 
     /**
@@ -17,7 +17,7 @@ class KpiWidgetsPageViews extends Widget
     {
         $config->setCategoryId('KPI Widgets');
 
-        $config->setName('KpiWidgets_PageViews');
+        $config->setName('KPIWidgets_PageViews');
     }
 
 

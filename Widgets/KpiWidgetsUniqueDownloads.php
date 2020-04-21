@@ -1,11 +1,11 @@
 <?php
 
-namespace Piwik\Plugins\KpiWidgets\Widgets;
+namespace Piwik\Plugins\KPIWidgets\Widgets;
 
 use Piwik\Widget\Widget;
 use Piwik\Widget\WidgetConfig;
 
-class KpiWidgetsUniqueDownloads extends Widget
+class KPIWidgetsUniqueDownloads extends Widget
 {
 
     /**
@@ -17,7 +17,7 @@ class KpiWidgetsUniqueDownloads extends Widget
     {
         $config->setCategoryId('KPI Widgets');
 
-        $config->setName('KpiWidgets_UniqueDownloads');
+        $config->setName('KPIWidgets_UniqueDownloads');
     }
 
 

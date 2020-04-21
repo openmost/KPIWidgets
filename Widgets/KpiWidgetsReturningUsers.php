@@ -1,11 +1,11 @@
 <?php
 
-namespace Piwik\Plugins\KpiWidgets\Widgets;
+namespace Piwik\Plugins\KPIWidgets\Widgets;
 
 use Piwik\Widget\Widget;
 use Piwik\Widget\WidgetConfig;
 
-class KpiWidgetsReturningUsers extends Widget
+class KPIWidgetsReturningUsers extends Widget
 {
 
     /**
@@ -17,7 +17,7 @@ class KpiWidgetsReturningUsers extends Widget
     {
         $config->setCategoryId('KPI Widgets');
 
-        $config->setName('KpiWidgets_ReturningUsers');
+        $config->setName('KPIWidgets_ReturningUsers');
     }
 
 
