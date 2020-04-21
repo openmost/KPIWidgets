@@ -1,0 +1,10 @@
+{
+  "SimpleKpi": {
+    "UniqueDownloads": "Téléchargements uniques",
+    "UniqueOutlinks": "Liens sortant uniques",
+    "ReturningUsers": "Utilisateurs connus",
+    "UniqueReturningUsers": "Utilisateurs uniques connus",
+    "UniqueReturningVisitors": "Visiteurs uniques connus",
+    "UniqueVisitors": "Visiteurs uniques"
+  }
+}

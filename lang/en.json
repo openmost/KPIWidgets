@@ -1,0 +1,10 @@
+{
+  "SimpleKpi": {
+    "UniqueDownloads": "Unique downloads",
+    "UniqueOutlinks": "Unique outlinks",
+    "ReturningUsers": "Returning users",
+    "UniqueReturningUsers": "Unique returning users",
+    "UniqueReturningVisitors": "Unique returning visitors",
+    "UniqueVisitors": "Unique visitors"
+  }
+}
