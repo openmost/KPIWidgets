@@ -1,4 +1,4 @@
-# Simple KPI
+# KPI Widgets
 Display KPI in widgets on your Matomo dashboard !
 
 ## Description
