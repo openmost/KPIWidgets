@@ -1,7 +1,7 @@
 {
     "name": "KPIWidgets",
     "description": "Widget for KPI to get better readability",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "theme": false,
     "require": {
         "piwik": ">=3.13.1-stable,<4.0.0-b1"
