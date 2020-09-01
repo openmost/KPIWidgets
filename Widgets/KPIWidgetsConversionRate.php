@@ -28,9 +28,9 @@ class KPIWidgetsConversionRate extends Widget
      */
     public function render()
     {
-        $result = \Piwik\API\Request::processRequest('API.get', ['format' => 'PHP']);
+        $result = json_decode(\Piwik\API\Request::processRequest('API.get', ['format' => 'json']));
 
-        return $this->renderTemplate('widget', ['value' => $result['conversion_rate']]);
+        return $this->renderTemplate('widget', ['value' => $result->conversion_rate]);
     }
 
 }

@@ -28,9 +28,9 @@ class KPIWidgetsAverageTimeOnSite extends Widget
      */
     public function render()
     {
-        $result = \Piwik\API\Request::processRequest('API.get', ['format' => 'PHP']);
+        $result = json_decode(\Piwik\API\Request::processRequest('API.get', ['format' => 'json']));
 
-        $value = gmdate('i \m\i\n s\s', $result['avg_time_on_site']);
+        $value = gmdate('i \m\i\n s\s', $result->avg_time_on_site);
 
         return $this->renderTemplate('widget', ['value' => $value]);
     }

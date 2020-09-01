@@ -17,7 +17,7 @@ class KPIWidgetsConversions extends Widget
     {
         $config->setCategoryId('KPI Widgets');
 
-        $config->setName('General_ColumnKeyword');
+        $config->setName('General_ColumnVisitsWithConversions');
     }
 
 
@@ -28,9 +28,9 @@ class KPIWidgetsConversions extends Widget
      */
     public function render()
     {
-        $result = \Piwik\API\Request::processRequest('API.get', ['format' => 'PHP']);
+        $result = json_decode(\Piwik\API\Request::processRequest('API.get', ['format' => 'json']));
 
-        return $this->renderTemplate('widget', ['value' => $result['nb_conversions']]);
+        return $this->renderTemplate('widget', ['value' => $result->nb_conversions]);
     }
 
 }

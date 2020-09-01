@@ -2,7 +2,7 @@
 Display KPI in widgets on your Matomo dashboard !
 
 ## Description
-With KPI Widgets plugin, you'll be able to display most important KPI on your Matomo dashboard the easyeast way !
+With KPI Widgets plugin, you'll be able to display the most important KPI on your Matomo dashboard the easyeast way !
 
 __Thank you for installing !__
   
