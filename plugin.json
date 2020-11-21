@@ -1,7 +1,7 @@
 {
     "name": "KPIWidgets",
     "description": "Display KPIs on the dashboard for better readability",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "theme": false,
     "require": {
         "piwik": ">=3.13.1-stable,<4.0.0-b1"
