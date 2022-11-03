@@ -1,7 +1,7 @@
 {
     "name": "KPIWidgets",
     "description": "Display KPIs on the dashboard for better readability",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "theme": false,
     "require": {
         "matomo": ">=4.0.0-b1,<5.0.0-b1"
