@@ -1,5 +1,9 @@
 ## Changelog
 
+## V1.1.1
+- Add '-' when no data to display
+- Set min height to widget body
+
 ## V1.1.0
 - Support for Matomo 4.x
 - Fix 1 translation
