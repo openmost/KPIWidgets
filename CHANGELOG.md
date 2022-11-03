@@ -1,6 +1,6 @@
 ## Changelog
 
-## V1.1.2
+## V1.1.3
 - Add '-' when no data to display
 - Set min height to widget body
 
