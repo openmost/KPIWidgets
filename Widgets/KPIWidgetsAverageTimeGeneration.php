@@ -31,8 +31,6 @@ class KPIWidgetsAverageTimeGeneration extends Widget
     {
         $result = json_decode(\Piwik\API\Request::processRequest('API.get', ['format' => 'json']));
 
-        var_dump($result);
-
         return $this->renderTemplate('widget', ['value' => $result->avg_page_load_time]);
     }
 }

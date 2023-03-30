@@ -8,8 +8,6 @@
 
 namespace Piwik\Plugins\KPIWidgets;
 
-use Piwik\Widget\WidgetConfig;
-
 class KPIWidgets extends \Piwik\Plugin
 {
     public function registerEvents()
