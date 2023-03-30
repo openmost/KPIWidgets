@@ -1,5 +1,8 @@
 ## Changelog
 
+## V1.1.4
+- Fix : stdClass::$avg_time_generation error
+
 ## V1.1.3
 - Add '-' when no data to display
 - Set min height to widget body

@@ -18,6 +18,7 @@ class KPIWidgetsAverageTimeGeneration extends Widget
         $config->setCategoryId('KPI Widgets');
 
         $config->setName('General_ColumnAverageGenerationTime');
+
     }
 
 
@@ -30,7 +31,8 @@ class KPIWidgetsAverageTimeGeneration extends Widget
     {
         $result = json_decode(\Piwik\API\Request::processRequest('API.get', ['format' => 'json']));
 
-        return $this->renderTemplate('widget', ['value' => $result->avg_time_generation]);
-    }
+        var_dump($result);
 
+        return $this->renderTemplate('widget', ['value' => $result->avg_page_load_time]);
+    }
 }
