@@ -31,6 +31,8 @@ class KPIWidgetsAverageTimeGeneration extends Widget
     {
         $result = json_decode(\Piwik\API\Request::processRequest('API.get', ['format' => 'json']));
 
-        return $this->renderTemplate('widget', ['value' => $result->avg_page_load_time]);
+        $value = gmdate('i \m\i\n s\s', $result->avg_time_on_site);
+
+        return $this->renderTemplate('widget', ['value' => $value]);
     }
 }
