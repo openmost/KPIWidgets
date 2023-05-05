@@ -1,10 +1,10 @@
 {
     "name": "KPIWidgets",
     "description": "Display KPIs on the dashboard for better readability",
-    "version": "1.1.6",
     "theme": false,
+    "version": "5.0.0",
     "require": {
-        "matomo": ">=4.0.0-b1,<5.0.0-b1"
+        "matomo": ">=5.0.0-b1,<6.0.0-b1"
     },
     "homepage": "https://lazuli.agency",
     "license": "GPL v3+",
