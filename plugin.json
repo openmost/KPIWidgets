@@ -2,28 +2,25 @@
     "name": "KPIWidgets",
     "description": "Display KPIs on the dashboard for better readability",
     "theme": false,
-    "version": "5.0.0",
+    "version": "5.0.1",
     "require": {
         "matomo": ">=5.0.0-b1,<6.0.0-b1"
     },
-    "homepage": "https://lazuli.agency",
+    "homepage": "https://openmost.io/softwares/kpi-widgets",
     "license": "GPL v3+",
     "keywords": [
         "KPIWidgets", "KPI", "Visits", "Pages", "Sessions", "Visitors", "Users"
     ],
     "support": {
-        "email": "contact@ronan-hello.fr",
-        "issues": "https://github.com/ronan-hello/matomo-kpi-widgets/issues",
-        "source": "https://github.com/ronan-hello/matomo-kpi-widgets"
+        "email": "ronan@openmost.io",
+        "issues": "https://github.com/openmost/KPIWidgets/issues",
+        "source": "https://github.com/openmost/KPIWidgets"
     },
     "authors": [
         {
-            "name": "Ronan HELLO",
-            "email": "contact@ronan-hello.fr",
-            "homepage": "https://ronan-hello.fr"
+            "name": "Openmost",
+            "email": "ronan@openmost.io",
+            "homepage": "https:\/\/openmost.io"
         }
-    ],
-    "donate": {
-        "paypal": "ronan56.hello@gmail.com"
-    }
+    ]
 }
