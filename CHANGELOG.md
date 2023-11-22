@@ -1,5 +1,9 @@
 ## Changelog
 
+### v4.1.8
+
+- Remove "donate" section in plugin.json
+
 ### v4.1.7
 
 - Update: plugin.json sources

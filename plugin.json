@@ -1,7 +1,7 @@
 {
     "name": "KPIWidgets",
     "description": "Display KPIs on the dashboard for better readability",
-    "version": "4.1.7",
+    "version": "4.1.8",
     "theme": false,
     "require": {
         "matomo": ">=4.0.0-b1,<5.0.0-b1"
@@ -22,8 +22,5 @@
             "email": "ronan@openmost.io",
             "homepage": "https:\/\/openmost.io"
         }
-    ],
-    "donate": {
-        "paypal": "ronan56.hello@gmail.com"
-    }
+    ]
 }
