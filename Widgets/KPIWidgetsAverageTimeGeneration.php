@@ -2,6 +2,7 @@
 
 namespace Piwik\Plugins\KPIWidgets\Widgets;
 
+use Piwik\Metrics\Formatter;
 use Piwik\Widget\Widget;
 use Piwik\Widget\WidgetConfig;
 

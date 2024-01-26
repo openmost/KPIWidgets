@@ -1,5 +1,9 @@
 ## Changelog
 
+### v4.1.9
+
+- Update : format numbers
+
 ### v4.1.8
 
 - Remove "donate" section in plugin.json
