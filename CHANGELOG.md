@@ -1,5 +1,9 @@
 ## Changelog
 
+### v5.0.2
+
+- update: Format numbers metrics
+
 ### v5.0.1
 
 - update: plugin.json
