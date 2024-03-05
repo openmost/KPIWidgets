@@ -1,12 +1,12 @@
 {
     "name": "KPIWidgets",
     "description": "Display KPIs on the dashboard for better readability",
-    "version": "4.1.9",
+    "version": "4.1.10",
     "theme": false,
     "require": {
         "matomo": ">=4.0.0-b1,<5.0.0-b1"
     },
-    "homepage": "https://openmost.io/softwares/kpi-widgets",
+    "homepage": "https://openmost.io/products/kpi-widgets/",
     "license": "GPL v3+",
     "keywords": [
         "KPIWidgets", "KPI", "Visits", "Pages", "Sessions", "Visitors", "Users"
