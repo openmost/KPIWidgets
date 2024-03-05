@@ -1,5 +1,9 @@
 ## Changelog
 
+### v5.0.3
+
+- update: Documentation
+
 ### v5.0.2
 
 - update: Format numbers metrics
