@@ -2,39 +2,25 @@
 
 namespace Piwik\Plugins\KPIWidgets\Widgets;
 
-use Piwik\Metrics\Formatter;
-use Piwik\Widget\Widget;
-use Piwik\Widget\WidgetConfig;
-
-class KPIWidgetsMaxActions extends Widget
+class KPIWidgetsMaxActions extends Base
 {
-
-    /**
-     * Configure the widget
-     *
-     * @param WidgetConfig $config
-     */
-    public static function configure(WidgetConfig $config)
+    protected static function getMetricKey(): string
     {
-        $config->setCategoryId('KPI Widgets');
-
-        $config->setName('General_Actions');
+        return 'max_actions';
     }
 
-
-    /**
-     * Render the widget
-     *
-     * @return string
-     */
-    public function render()
+    protected static function getWidgetName(): string
     {
-        $result = json_decode(\Piwik\API\Request::processRequest('API.get', ['format' => 'json']));
-
-        $formatter = new Formatter();
-        $value = $formatter->getPrettyNumber($result->max_actions);
-
-        return $this->renderTemplate('widget', ['value' => $value]);
+        return 'General_Actions';
     }
 
+    protected static function getSubcategory(): string
+    {
+        return self::SUBCATEGORY_BEHAVIOR;
+    }
+
+    protected static function getWidgetOrder(): int
+    {
+        return 23;
+    }
 }

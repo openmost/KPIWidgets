@@ -2,39 +2,25 @@
 
 namespace Piwik\Plugins\KPIWidgets\Widgets;
 
-use Piwik\Metrics\Formatter;
-use Piwik\Widget\Widget;
-use Piwik\Widget\WidgetConfig;
-
-class KPIWidgetsDownloads extends Widget
+class KPIWidgetsDownloads extends Base
 {
-
-    /**
-     * Configure the widget
-     *
-     * @param WidgetConfig $config
-     */
-    public static function configure(WidgetConfig $config)
+    protected static function getMetricKey(): string
     {
-        $config->setCategoryId('KPI Widgets');
-
-        $config->setName('General_Downloads');
+        return 'nb_downloads';
     }
 
-
-    /**
-     * Render the widget
-     *
-     * @return string
-     */
-    public function render()
+    protected static function getWidgetName(): string
     {
-        $result = json_decode(\Piwik\API\Request::processRequest('API.get', ['format' => 'json']));
-
-        $formatter = new Formatter();
-        $value = $formatter->getPrettyNumber($result->nb_downloads);
-
-        return $this->renderTemplate('widget', ['value' => $value]);
+        return 'General_Downloads';
     }
 
+    protected static function getSubcategory(): string
+    {
+        return self::SUBCATEGORY_BEHAVIOR;
+    }
+
+    protected static function getWidgetOrder(): int
+    {
+        return 24;
+    }
 }

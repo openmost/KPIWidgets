@@ -1,5 +1,22 @@
 ## Changelog
 
+### v5.1.0
+
+- Add goal-specific widgets (Conversions, Conversion Rate, Revenue per goal)
+- Add evolution indicator with period comparison (colored pill: green/red/grey)
+- Add subcategories for better widget organization (Traffic, Engagement, Goals)
+- New MetricsService with in-memory API cache (-90% API calls)
+- Single API call shared across all widgets
+- Optional evolution calculation (can be disabled globally or per widget)
+- Major refactoring with abstract Base class
+- Remove code duplication between Controller and Widgets
+- Add strict types declarations
+- Use PHP 8 match expressions
+- Centralized metrics logic in Services/MetricsService.php
+- New widget design with evolution pill below value
+- Pastel background colors for evolution indicator
+- Dark mode support
+
 ### v5.0.4
 
 - update: marketplace category and cover

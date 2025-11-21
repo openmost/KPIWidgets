@@ -2,39 +2,25 @@
 
 namespace Piwik\Plugins\KPIWidgets\Widgets;
 
-use Piwik\Metrics\Formatter;
-use Piwik\Widget\Widget;
-use Piwik\Widget\WidgetConfig;
-
-class KPIWidgetsPageViews extends Widget
+class KPIWidgetsPageViews extends Base
 {
-
-    /**
-     * Configure the widget
-     *
-     * @param WidgetConfig $config
-     */
-    public static function configure(WidgetConfig $config)
+    protected static function getMetricKey(): string
     {
-        $config->setCategoryId('KPI Widgets');
-
-        $config->setName('KPIWidgets_PageViews');
+        return 'nb_pageviews';
     }
 
-
-    /**
-     * Render the widget
-     *
-     * @return string
-     */
-    public function render()
+    protected static function getWidgetName(): string
     {
-        $result = json_decode(\Piwik\API\Request::processRequest('API.get', ['format' => 'json']));
-
-        $formatter = new Formatter();
-        $value = $formatter->getPrettyNumber($result->nb_pageviews);
-
-        return $this->renderTemplate('widget', ['value' => $value]);
+        return 'KPIWidgets_PageViews';
     }
 
+    protected static function getSubcategory(): string
+    {
+        return self::SUBCATEGORY_TRAFFIC;
+    }
+
+    protected static function getWidgetOrder(): int
+    {
+        return 13;
+    }
 }

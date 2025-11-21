@@ -2,39 +2,25 @@
 
 namespace Piwik\Plugins\KPIWidgets\Widgets;
 
-use Piwik\Metrics\Formatter;
-use Piwik\Widget\Widget;
-use Piwik\Widget\WidgetConfig;
-
-class KPIWidgetsOutlinks extends Widget
+class KPIWidgetsOutlinks extends Base
 {
-
-    /**
-     * Configure the widget
-     *
-     * @param WidgetConfig $config
-     */
-    public static function configure(WidgetConfig $config)
+    protected static function getMetricKey(): string
     {
-        $config->setCategoryId('KPI Widgets');
-
-        $config->setName('General_Outlinks');
+        return 'nb_outlinks';
     }
 
-
-    /**
-     * Render the widget
-     *
-     * @return string
-     */
-    public function render()
+    protected static function getWidgetName(): string
     {
-        $result = json_decode(\Piwik\API\Request::processRequest('API.get', ['format' => 'json']));
-
-        $formatter = new Formatter();
-        $value = $formatter->getPrettyNumber($result->nb_outlinks);
-
-        return $this->renderTemplate('widget', ['value' => $value]);
+        return 'General_Outlinks';
     }
 
+    protected static function getSubcategory(): string
+    {
+        return self::SUBCATEGORY_BEHAVIOR;
+    }
+
+    protected static function getWidgetOrder(): int
+    {
+        return 26;
+    }
 }

@@ -2,35 +2,35 @@
 
 namespace Piwik\Plugins\KPIWidgets\Widgets;
 
-use Piwik\Widget\Widget;
-use Piwik\Widget\WidgetConfig;
-
-class KPIWidgetsBounceRate extends Widget
+class KPIWidgetsBounceRate extends Base
 {
-
-    /**
-     * Configure the widget
-     *
-     * @param WidgetConfig $config
-     */
-    public static function configure(WidgetConfig $config)
+    protected static function getMetricKey(): string
     {
-        $config->setCategoryId('KPI Widgets');
-
-        $config->setName('General_ColumnBounceRate');
+        return 'bounce_rate';
     }
 
-
-    /**
-     * Render the widget
-     *
-     * @return string
-     */
-    public function render()
+    protected static function getWidgetName(): string
     {
-        $result = json_decode(\Piwik\API\Request::processRequest('API.get', ['format' => 'json']));
-
-        return $this->renderTemplate('widget', ['value' => $result->bounce_rate]);
+        return 'General_ColumnBounceRate';
     }
 
+    protected static function getSubcategory(): string
+    {
+        return self::SUBCATEGORY_BEHAVIOR;
+    }
+
+    protected static function getWidgetOrder(): int
+    {
+        return 20;
+    }
+
+    protected static function getFormat(): string
+    {
+        return self::FORMAT_RAW;
+    }
+
+    protected static function isLowerValueBetter(): bool
+    {
+        return true;
+    }
 }

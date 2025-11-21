@@ -1,3 +1,24 @@
 <div class="kpi-widgets">
-    {{ value ?? '-' }}
+    <div class="kpi-value">{{ value ?? '-' }}</div>
+    {% if evolution is defined and evolution is not null %}
+        {% set isLowerBetter = isLowerValueBetter is defined and isLowerValueBetter %}
+        {% set trend = evolution.trend ?? 0 %}
+        {% set percent = evolution.percent ?? '0%' %}
+
+        {% if trend > 0 %}
+            {% set evolutionClass = isLowerBetter ? 'kpi-negative' : 'kpi-positive' %}
+            {% set arrow = '↑' %}
+            {% set displayPercent = '+' ~ percent %}
+        {% elseif trend < 0 %}
+            {% set evolutionClass = isLowerBetter ? 'kpi-positive' : 'kpi-negative' %}
+            {% set arrow = '↓' %}
+            {% set displayPercent = percent %}
+        {% else %}
+            {% set evolutionClass = 'kpi-neutral' %}
+            {% set arrow = '→' %}
+            {% set displayPercent = percent %}
+        {% endif %}
+
+        <div class="kpi-evolution {{ evolutionClass }}">{{ arrow }} {{ displayPercent }}</div>
+    {% endif %}
 </div>

@@ -2,38 +2,35 @@
 
 namespace Piwik\Plugins\KPIWidgets\Widgets;
 
-use Piwik\Metrics\Formatter;
-use Piwik\Widget\Widget;
-use Piwik\Widget\WidgetConfig;
-
-class KPIWidgetsAverageTimeGeneration extends Widget
+class KPIWidgetsAverageTimeGeneration extends Base
 {
-
-    /**
-     * Configure the widget
-     *
-     * @param WidgetConfig $config
-     */
-    public static function configure(WidgetConfig $config)
+    protected static function getMetricKey(): string
     {
-        $config->setCategoryId('KPI Widgets');
-
-        $config->setName('General_ColumnAverageGenerationTime');
-
+        return 'avg_time_generation';
     }
 
-
-    /**
-     * Render the widget
-     *
-     * @return string
-     */
-    public function render()
+    protected static function getWidgetName(): string
     {
-        $result = json_decode(\Piwik\API\Request::processRequest('API.get', ['format' => 'json']));
+        return 'General_ColumnAverageGenerationTime';
+    }
 
-        $value = gmdate('i \m\i\n s\s', $result->avg_time_on_site);
+    protected static function getSubcategory(): string
+    {
+        return self::SUBCATEGORY_BEHAVIOR;
+    }
 
-        return $this->renderTemplate('widget', ['value' => $value]);
+    protected static function getWidgetOrder(): int
+    {
+        return 29;
+    }
+
+    protected static function getFormat(): string
+    {
+        return self::FORMAT_TIME;
+    }
+
+    protected static function isLowerValueBetter(): bool
+    {
+        return true;
     }
 }

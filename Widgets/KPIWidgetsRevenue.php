@@ -2,39 +2,30 @@
 
 namespace Piwik\Plugins\KPIWidgets\Widgets;
 
-use Piwik\Metrics\Formatter;
-use Piwik\Widget\Widget;
-use Piwik\Widget\WidgetConfig;
-
-class KPIWidgetsRevenue extends Widget
+class KPIWidgetsRevenue extends Base
 {
-
-    /**
-     * Configure the widget
-     *
-     * @param WidgetConfig $config
-     */
-    public static function configure(WidgetConfig $config)
+    protected static function getMetricKey(): string
     {
-        $config->setCategoryId('KPI Widgets');
-
-        $config->setName('General_ColumnRevenue');
+        return 'revenue';
     }
 
-
-    /**
-     * Render the widget
-     *
-     * @return string
-     */
-    public function render()
+    protected static function getWidgetName(): string
     {
-        $result = json_decode(\Piwik\API\Request::processRequest('API.get', ['format' => 'json']));
-
-        $formatter = new Formatter();
-        $value = $formatter->getPrettyNumber($result->revenue);
-
-        return $this->renderTemplate('widget', ['value' => $value]);
+        return 'General_ColumnRevenue';
     }
 
+    protected static function getSubcategory(): string
+    {
+        return self::SUBCATEGORY_GOALS;
+    }
+
+    protected static function getWidgetOrder(): int
+    {
+        return 32;
+    }
+
+    protected static function getFormat(): string
+    {
+        return self::FORMAT_MONEY;
+    }
 }

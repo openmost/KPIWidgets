@@ -1,9 +1,15 @@
 {
   "KPIWidgets": {
+    "KPI": "KPI",
+    "Traffic": "Trafic",
+    "Behavior": "Comportement",
+    "Goals": "Objectifs",
+    "Conversions": "Conversions",
+    "ConversionRate": "Taux de conversion",
     "PageViews": "Pages vues",
     "UniquePageViews": "Pages vues uniques",
     "UniqueDownloads": "Téléchargements uniques",
-    "UniqueOutlinks": "Liens sortant uniques",
+    "UniqueOutlinks": "Liens sortants uniques",
     "ReturningUsers": "Utilisateurs connus",
     "UniqueReturningUsers": "Utilisateurs uniques connus",
     "UniqueReturningVisitors": "Visiteurs uniques connus",
