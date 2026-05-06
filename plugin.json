@@ -1,27 +1,33 @@
 {
-    "name": "KPIWidgets",
-    "description": "Display KPIs on the dashboard for better readability",
-    "theme": false,
-    "version": "5.1.0",
-    "require": {
-        "matomo": ">=5.0.0-b1,<6.0.0-b1"
-    },
-    "homepage": "https://openmost.io/products/kpi-widgets/",
-    "license": "GPL v3+",
-    "keywords": [
-        "KPIWidgets", "KPI", "Visits", "Pages", "Sessions", "Visitors", "Users"
-    ],
-    "support": {
-        "email": "ronan@openmost.io",
-        "issues": "https://github.com/openmost/KPIWidgets/issues",
-        "source": "https://github.com/openmost/KPIWidgets"
-    },
-    "authors": [
-        {
-            "name": "Openmost",
-            "email": "ronan@openmost.io",
-            "homepage": "https:\/\/openmost.io"
-        }
-    ],
-    "categories": "insights"
+  "name": "KPIWidgets",
+  "description": "Display KPIs on the dashboard for better readability",
+  "theme": false,
+  "version": "5.2.0",
+  "require": {
+    "matomo": ">=5.0.0,<6.0.0-b1"
+  },
+  "homepage": "https://openmost.io/products/kpi-widgets/",
+  "license": "GPL v3+",
+  "keywords": [
+    "KPIWidgets",
+    "KPI",
+    "Visits",
+    "Pages",
+    "Sessions",
+    "Visitors",
+    "Users"
+  ],
+  "support": {
+    "email": "ronan@openmost.com",
+    "issues": "https://github.com/openmost/KPIWidgets/issues",
+    "source": "https://github.com/openmost/KPIWidgets"
+  },
+  "authors": [
+    {
+      "name": "Openmost",
+      "email": "ronan@openmost.com",
+      "homepage": "https:\/\/openmost.com"
+    }
+  ],
+  "categories": "insights"
 }

@@ -1,5 +1,12 @@
 ## Changelog
 
+### v5.2.0
+
+- Add dark mode styles for evolution indicator (positive / negative / neutral pills)
+- Update support email and author homepage to openmost.com
+- Refresh marketplace screenshots
+- Relax Matomo minimum version requirement (`>=5.0.0`)
+
 ### v5.1.0
 
 - Add goal-specific widgets (Conversions, Conversion Rate, Revenue per goal)

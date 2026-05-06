@@ -36,3 +36,32 @@
         color: #757575;
     }
 }
+
+.kpi-widgets-dark-mode() {
+    .kpi-widgets {
+        .kpi-positive {
+            background-color: rgba(76, 175, 80, 0.18);
+            color: #81c784;
+        }
+
+        .kpi-negative {
+            background-color: rgba(244, 67, 54, 0.18);
+            color: #ef9a9a;
+        }
+
+        .kpi-neutral {
+            background-color: rgba(255, 255, 255, 0.08);
+            color: #b0bec5;
+        }
+    }
+}
+
+[data-theme-mode="dark"]:root {
+    .kpi-widgets-dark-mode();
+}
+
+[data-theme-mode="auto"]:root {
+    @media (prefers-color-scheme: dark) {
+        .kpi-widgets-dark-mode();
+    }
+}
