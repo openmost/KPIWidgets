@@ -2,11 +2,11 @@
   "name": "KPIWidgets",
   "description": "Display KPIs on the dashboard for better readability",
   "theme": false,
-  "version": "5.2.0",
+  "version": "6.0.0",
   "require": {
-    "matomo": ">=5.0.0,<6.0.0-b1"
+    "matomo": ">=6.0.0-b1,<7.0.0-b1"
   },
-  "homepage": "https://openmost.io/products/kpi-widgets/",
+  "homepage": "https://openmost.com/matomo/extensions/kpiwidgets",
   "license": "GPL v3+",
   "keywords": [
     "KPIWidgets",

@@ -13,6 +13,7 @@ use Piwik\Common;
 use Piwik\Metrics\Formatter;
 use Piwik\Piwik;
 use Piwik\Plugins\KPIWidgets\Services\MetricsService;
+use Piwik\Plugins\KPIWidgets\Services\VueEntry;
 
 class Controller extends \Piwik\Plugin\Controller
 {
@@ -144,13 +145,9 @@ class Controller extends \Piwik\Plugin\Controller
 
     private function renderGoalWidget($title, $value, $evolution)
     {
-        // Use different template based on context
-        // On dashboard: use simple widget template (Matomo adds the card wrapper)
-        // On reporting page: use goalWidget template with card wrapper
-        $template = $this->isWidgetized() ? 'widget' : 'goalWidget';
-
-        return $this->renderTemplate($template, [
-            'title' => $title,
+        // On dashboard Matomo adds the card wrapper and title, on reporting page the component renders them
+        return VueEntry::renderKPIWidget([
+            'cardTitle' => $this->isWidgetized() ? '' : $title,
             'value' => $value,
             'evolution' => $evolution,
             'isLowerValueBetter' => false,

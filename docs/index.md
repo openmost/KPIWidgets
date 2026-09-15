@@ -2,11 +2,11 @@
 
 This plugin use the Matomo internal API to work, no additional code needed.
 
-If you want to contribute, please download the folder and continue in this direction using small and maintainable components and PHP Class. 
+If you want to contribute, please download the folder and continue in this direction using small and maintainable components and PHP Class.
 
 Consider this is my first Matomo plugin, be compliant and please tell me how to make it better if you see any errors.
 
-Widgets are grouped under three subcategories: Traffic, Engagement and Goals.
+Widgets are grouped under three subcategories: Traffic, Behavior and Goals.
 
 ### Traffic
 - Visits
@@ -24,7 +24,7 @@ Widgets are grouped under three subcategories: Traffic, Engagement and Goals.
 - Downloads
 - Unique downloads
 
-### Engagement
+### Behavior
 - Actions per visits
 - Average time on site
 - Average time generation

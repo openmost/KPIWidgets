@@ -12,6 +12,7 @@ namespace Piwik\Plugins\KPIWidgets\Widgets;
 
 use Piwik\Metrics\Formatter;
 use Piwik\Plugins\KPIWidgets\Services\MetricsService;
+use Piwik\Plugins\KPIWidgets\Services\VueEntry;
 use Piwik\Widget\Widget;
 use Piwik\Widget\WidgetConfig;
 
@@ -115,12 +116,10 @@ abstract class Base extends Widget
         // Format the value
         $formattedValue = $this->formatValue($currentValue, $context['idSite']);
 
-        return $this->renderTemplate('widget', [
+        return VueEntry::renderKPIWidget([
             'value' => $formattedValue,
-            'rawValue' => $currentValue,
             'evolution' => $evolution,
             'isLowerValueBetter' => static::isLowerValueBetter(),
-            'format' => static::getFormat(),
         ]);
     }
 

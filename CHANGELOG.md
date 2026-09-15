@@ -1,5 +1,14 @@
 ## Changelog
 
+### v6.0.0
+
+- Compatibility with Matomo 6.x (`>=6.0.0-b1,<7.0.0-b1`)
+- Requires PHP 8.1+
+- Update plugin homepage URL
+- Widgets rendered by a Vue component (`KPIWidgets.KPIWidget`) composing the core `MetricValue` and `EvolutionBadge` components
+- Evolution indicator aligned with Matomo 6 design (brand colours, triangle / dash icons, dark mode)
+- Remove Twig templates
+
 ### v5.2.0
 
 - Add dark mode styles for evolution indicator (positive / negative / neutral pills)
