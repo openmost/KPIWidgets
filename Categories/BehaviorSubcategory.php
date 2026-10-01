@@ -14,5 +14,5 @@ class BehaviorSubcategory extends Subcategory
 {
     protected $categoryId = 'KPIWidgets_KPI';
     protected $id = 'KPIWidgets_Behavior';
-    protected $order = 2;
+    protected $order = 3;
 }

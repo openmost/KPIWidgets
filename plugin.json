@@ -1,33 +1,36 @@
 {
   "name": "KPIWidgets",
-  "description": "Display KPIs on the dashboard for better readability",
+  "description": "Single-number KPI widgets for your dashboards, each with its evolution against the previous period.",
+  "version": "6.1.0",
   "theme": false,
-  "version": "6.0.0",
   "require": {
     "matomo": ">=6.0.0-b1,<7.0.0-b1"
   },
-  "homepage": "https://openmost.com/matomo/extensions/kpiwidgets",
-  "license": "GPL v3+",
-  "keywords": [
-    "KPIWidgets",
-    "KPI",
-    "Visits",
-    "Pages",
-    "Sessions",
-    "Visitors",
-    "Users"
+  "authors": [
+    {
+      "name": "Openmost",
+      "email": "ronan@openmost.com",
+      "homepage": "https://openmost.com"
+    }
   ],
   "support": {
     "email": "ronan@openmost.com",
     "issues": "https://github.com/openmost/KPIWidgets/issues",
     "source": "https://github.com/openmost/KPIWidgets"
   },
-  "authors": [
-    {
-      "name": "Openmost",
-      "email": "ronan@openmost.com",
-      "homepage": "https:\/\/openmost.com"
-    }
+  "homepage": "https://openmost.com/matomo/extensions/kpiwidgets",
+  "preview": {
+    "video_url": "https://www.youtube-nocookie.com/embed/M4skkqif2lY"
+  },
+  "license": "GPL v3+",
+  "keywords": [
+    "kpiwidgets",
+    "kpi",
+    "visits",
+    "pages",
+    "sessions",
+    "visitors",
+    "users"
   ],
-  "categories": "insights"
+  "category": "insights"
 }

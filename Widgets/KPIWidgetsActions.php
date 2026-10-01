@@ -2,25 +2,25 @@
 
 namespace Piwik\Plugins\KPIWidgets\Widgets;
 
-class KPIWidgetsConversions extends Base
+class KPIWidgetsActions extends Base
 {
     protected static function getMetricKey(): string
     {
-        return 'nb_conversions';
+        return 'nb_actions';
     }
 
     protected static function getWidgetName(): string
     {
-        return 'Goals_ColumnConversions';
+        return 'General_ColumnNbActions';
     }
 
     protected static function getSubcategory(): string
     {
-        return self::SUBCATEGORY_GOALS;
+        return self::SUBCATEGORY_TRAFFIC;
     }
 
     protected static function getWidgetOrder(): int
     {
-        return 30;
+        return 19;
     }
 }

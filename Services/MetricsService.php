@@ -11,14 +11,20 @@ declare(strict_types=1);
 namespace Piwik\Plugins\KPIWidgets\Services;
 
 use Piwik\API\Request;
+use Piwik\Cache;
 use Piwik\Common;
 use Piwik\DataTable;
+use Piwik\Date;
 use Piwik\DataTable\Filter\CalculateEvolutionFilter;
 use Piwik\Period\Factory as PeriodFactory;
+use Piwik\Piwik;
 use Piwik\Site;
 
 class MetricsService
 {
+    private const CACHE_TTL_CURRENT_PERIOD = 300;
+    private const CACHE_TTL_CLOSED_PERIOD = 3600;
+
     /** @var array In-memory cache for API results */
     private static array $cache = [];
 
@@ -54,26 +60,11 @@ class MetricsService
      */
     public static function getMetrics(int $idSite, string $period, string $date): ?object
     {
-        $cacheKey = self::getCacheKey('API.get', $idSite, $period, $date);
-
-        if (isset(self::$cache[$cacheKey])) {
-            return self::$cache[$cacheKey];
-        }
-
-        try {
-            $result = Request::processRequest('API.get', [
-                'idSite' => $idSite,
-                'period' => $period,
-                'date' => $date,
-            ]);
-
-            $result = self::normalizeResult($result);
-
-            self::$cache[$cacheKey] = $result;
-            return $result;
-        } catch (\Exception $e) {
-            return null;
-        }
+        return self::fetch('API.get', [
+            'idSite' => $idSite,
+            'period' => $period,
+            'date' => $date,
+        ]);
     }
 
     /**
@@ -81,48 +72,92 @@ class MetricsService
      */
     public static function getGoalMetrics(int $idSite, string $period, string $date, int $idGoal): ?object
     {
-        $cacheKey = self::getCacheKey('Goals.get', $idSite, $period, $date, $idGoal);
+        return self::fetch('Goals.get', [
+            'idSite' => $idSite,
+            'period' => $period,
+            'date' => $date,
+            'idGoal' => $idGoal,
+        ]);
+    }
 
-        if (isset(self::$cache[$cacheKey])) {
+    /**
+     * Each dashboard widget is its own HTTP request, so the in-memory layer only dedupes calls inside one
+     * widget, the persistent layer is what spares the archive reads across all widgets of a dashboard.
+     */
+    private static function fetch(string $method, array $params): ?object
+    {
+        $segment = Request::getRawSegmentFromRequest();
+        if (!empty($segment)) {
+            $params['segment'] = $segment;
+        }
+
+        $cacheKey = 'KPIWidgets_' . md5($method . serialize($params));
+
+        if (array_key_exists($cacheKey, self::$cache)) {
             return self::$cache[$cacheKey];
         }
 
+        // A persistent cache hit bypasses Request::processRequest and its access check
+        Piwik::checkUserHasViewAccess($params['idSite']);
+
+        $persistentCache = Cache::getLazyCache();
+        $columns = $persistentCache->fetch($cacheKey);
+
+        if (!is_array($columns)) {
+            try {
+                $columns = self::normalizeResult(Request::processRequest($method, $params));
+            } catch (\Exception $e) {
+                return null;
+            }
+
+            if ($columns === null) {
+                return null;
+            }
+
+            $persistentCache->save(
+                $cacheKey,
+                $columns,
+                self::getCacheTtl($params['idSite'], $params['period'], $params['date'])
+            );
+        }
+
+        return self::$cache[$cacheKey] = (object) $columns;
+    }
+
+    /**
+     * Periods still running get a short TTL so KPIs stay close to live, closed periods only change on
+     * archive invalidation (log import, reprocessing) so an hour of staleness is acceptable.
+     */
+    private static function getCacheTtl(int $idSite, string $period, string $date): int
+    {
         try {
-            $result = Request::processRequest('Goals.get', [
-                'idSite' => $idSite,
-                'period' => $period,
-                'date' => $date,
-                'idGoal' => $idGoal,
-            ]);
+            $timezone = Site::getTimezoneFor($idSite);
+            $periodEnd = PeriodFactory::build($period, $date, $timezone)->getDateEnd();
 
-            $result = self::normalizeResult($result);
-
-            self::$cache[$cacheKey] = $result;
-            return $result;
+            return $periodEnd->isEarlier(Date::factory('today', $timezone))
+                ? self::CACHE_TTL_CLOSED_PERIOD
+                : self::CACHE_TTL_CURRENT_PERIOD;
         } catch (\Exception $e) {
-            return null;
+            return self::CACHE_TTL_CURRENT_PERIOD;
         }
     }
 
     /**
-     * Normalize API result to object
+     * Normalize API result to a plain array of columns
      */
-    private static function normalizeResult($result): ?object
+    private static function normalizeResult($result): ?array
     {
         if ($result instanceof DataTable) {
             $row = $result->getFirstRow();
-            if ($row) {
-                return (object) $row->getColumns();
-            }
-            return (object) [];
+            return $row ? $row->getColumns() : [];
         }
 
         if (is_array($result)) {
-            return (object) $result;
+            return $result;
         }
 
         if (is_object($result)) {
-            return $result;
+            return (array) $result;
         }
 
         return null;

@@ -1,41 +1,30 @@
 ## Documentation
 
-This plugin use the Matomo internal API to work, no additional code needed.
+KPI Widgets adds single-number widgets to the Matomo dashboard. Each widget shows the value of the selected period and an evolution badge against the previous period. Widgets follow the site, period, date and segment of the dashboard.
 
-If you want to contribute, please download the folder and continue in this direction using small and maintainable components and PHP Class.
-
-Consider this is my first Matomo plugin, be compliant and please tell me how to make it better if you see any errors.
-
-Widgets are grouped under three subcategories: Traffic, Behavior and Goals.
+Add them from the "Dashboard" menu, in the KPI category. Widgets are grouped under four subcategories.
 
 ### Traffic
-- Visits
-- Unique visitors
-- Users
-- Returning visitors
-- Unique returning visitors
-- Returning users
-- Page views
-- Unique page views
-- Keywords
-- Searches
-- Outlinks
-- Unique outlinks
-- Downloads
-- Unique downloads
+- Visits, unique visitors, users
+- New visits
+- Returning visitors, unique returning visitors, returning users
+- Actions, page views, unique page views
+- AI agent visits and human visits (requires the AIAgents plugin)
+
+### Acquisition
+- Visits from search engines, AI assistants, direct entry, websites, social networks and campaigns
+- Share of visits for each of these channels
+- The AI assistants widgets appear when your Matomo version tracks AI assistants as a referrer type
 
 ### Behavior
-- Actions per visits
+- Bounce rate, actions per visit, max actions in one visit
 - Average time on site
-- Average time generation
-- Bounce rate
-- Max actions
+- Average page load time (requires the PagePerformance plugin)
+- Downloads, unique downloads, outlinks, unique outlinks
+- Internal searches, search keywords
 
 ### Goals
-- Conversions (overall and per goal)
-- Conversion rate (overall and per goal)
-- Revenue (overall and per goal)
+- Conversions, conversion rate and revenue, for all goals and for each goal of the site
+- Visits with conversions
 
-Each widget displays the current value alongside an evolution indicator that compares the selected period to the previous one.
-
-Want more ? Ask me !
+Widgets whose source plugin or metric is not available are not listed. Values come from the Matomo API (`API.get` and `Goals.get`), shared by every widget of the dashboard and cached for 5 minutes on running periods, 1 hour on closed periods.

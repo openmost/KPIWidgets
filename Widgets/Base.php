@@ -20,6 +20,7 @@ abstract class Base extends Widget
 {
     // Subcategories
     public const SUBCATEGORY_TRAFFIC = 'KPIWidgets_Traffic';
+    public const SUBCATEGORY_ACQUISITION = 'KPIWidgets_Acquisition';
     public const SUBCATEGORY_BEHAVIOR = 'KPIWidgets_Behavior';
     public const SUBCATEGORY_GOALS = 'KPIWidgets_Goals';
 
@@ -27,6 +28,7 @@ abstract class Base extends Widget
     public const FORMAT_NUMBER = 'number';
     public const FORMAT_PERCENT = 'percent';
     public const FORMAT_TIME = 'time';
+    public const FORMAT_DURATION = 'duration';
     public const FORMAT_MONEY = 'money';
     public const FORMAT_RAW = 'raw';
 
@@ -73,6 +75,14 @@ abstract class Base extends Widget
     }
 
     /**
+     * @return bool Whether the metric exists on this Matomo install (source plugin active, core version recent enough)
+     */
+    protected static function isAvailable(): bool
+    {
+        return true;
+    }
+
+    /**
      * @return bool Whether to show evolution
      */
     protected static function showEvolution(): bool
@@ -87,6 +97,7 @@ abstract class Base extends Widget
         $config->setName(static::getWidgetName());
         $config->setOrder(static::getWidgetOrder());
         $config->setIsWidgetizable();
+        $config->setIsEnabled(static::isAvailable());
     }
 
     public function render(): string
@@ -131,6 +142,7 @@ abstract class Base extends Widget
             self::FORMAT_NUMBER => $formatter->getPrettyNumber($value),
             self::FORMAT_PERCENT => is_numeric($value) ? $formatter->getPrettyNumber($value, 1) . '%' : (string) $value,
             self::FORMAT_TIME => is_numeric($value) ? gmdate('i\m\i\n s\s', (int) $value) : (string) $value,
+            self::FORMAT_DURATION => is_numeric($value) ? $formatter->getPrettyTimeFromSeconds($value, true) : (string) $value,
             self::FORMAT_MONEY => $formatter->getPrettyMoney($value, $idSite),
             default => (string) $value,
         };

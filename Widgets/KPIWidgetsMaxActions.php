@@ -11,7 +11,7 @@ class KPIWidgetsMaxActions extends Base
 
     protected static function getWidgetName(): string
     {
-        return 'General_Actions';
+        return 'General_ColumnMaxActions';
     }
 
     protected static function getSubcategory(): string

@@ -1,5 +1,17 @@
 ## Changelog
 
+### v6.1.0
+
+- New Acquisition subcategory: visits and share of visits from search engines, AI assistants, direct entry, websites, social networks and campaigns
+- New widgets: New visits, Actions, Visits with conversions, AI agent visits and Human visits (AIAgents plugin)
+- Average generation time widget now shows the average page load time (PagePerformance), existing dashboards keep working
+- Widgets are hidden when their source plugin or metric is not available on the Matomo install
+- Widgets now follow the segment selected on the dashboard
+- KPI values are cached across dashboard widgets through the Matomo cache (5 min for running periods, 1 h for closed ones)
+- Fix Conversions and Max actions widgets showing the wrong label
+- Translated into 12 languages
+- Shorter Marketplace description that fits the plugin cards, and campaign parameters on the Openmost links of the README.
+
 ### v6.0.0
 
 - Compatibility with Matomo 6.x (`>=6.0.0-b1,<7.0.0-b1`)

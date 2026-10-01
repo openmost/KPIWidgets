@@ -10,9 +10,10 @@ namespace Piwik\Plugins\KPIWidgets\Categories;
 
 use Piwik\Category\Subcategory;
 
-class GoalsSubcategory extends Subcategory
+class AcquisitionSubcategory extends Subcategory
 {
     protected $categoryId = 'KPIWidgets_KPI';
-    protected $id = 'KPIWidgets_Goals';
-    protected $order = 4;
+    protected $id = 'KPIWidgets_Acquisition';
+    protected $name = 'Referrers_Acquisition';
+    protected $order = 2;
 }

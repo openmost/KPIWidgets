@@ -1,22 +1,29 @@
 ## FAQ
 
-__How to install this plugin__
+**How do I add a KPI widget to a dashboard?**
 
-This plugin is available in the official marketplace of Matomo. You have to install the same way as other plugins
-- Go to the administration panel
-- Look for the Marketplace section and select "Plugins" in the dropdown
-- Then search for 'KPI Widgets' and install it.
-- Activate the plugin and you're done !
+Open a dashboard, open the "Dashboard" menu, choose the KPI category, then a subcategory (Traffic, Acquisition, Behavior or Goals) and click the widget.
 
-__Is the plugin active for all Matomo users in my instance ?__
+**Why can't I find a widget, such as AI agent visits or page load time?**
 
-Yes, if you choose this plugin for your Matomo instance, all users will be able to use it.
+Widgets are hidden when their source is missing: AI agent and human visits need the AIAgents plugin, average page load time needs the PagePerformance plugin, and the AI assistants widgets need a Matomo version that tracks AI assistants as a referrer type.
 
-__How can I contribute to this plugin ?__
+**How is the evolution calculated?**
 
-You can help me developping this plugin by contacting me. You can also fork the project and ask for an integration. All way you consider as legit to contribute are welcome.
+The value of the selected period is compared with the previous period of the same length. For metrics where lower is better, such as the bounce rate, a decrease is shown as positive.
 
-__How long this plugin will be maintained ?__
+**Do the widgets follow segments?**
 
-As long as possible, I have many project to maintain, I'm the first user of this plugin and I use Matomo on many project, if I see errors, I'll patch this plugin faster as possible !
+Yes, the segment selected on the dashboard applies to every KPI widget.
 
+**Why does a value take a few minutes to update?**
+
+Values are cached for 5 minutes on periods still running and for 1 hour on closed periods, so dashboards with many widgets stay fast.
+
+**Is the plugin available to all users?**
+
+Yes. Any user who can view a site can add KPI widgets for it.
+
+**Which versions of Matomo are supported?**
+
+Version 6.x supports Matomo 6. Use the 5.x versions for Matomo 5.

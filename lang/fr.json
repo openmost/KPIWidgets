@@ -13,6 +13,29 @@
     "ReturningUsers": "Utilisateurs connus",
     "UniqueReturningUsers": "Utilisateurs uniques connus",
     "UniqueReturningVisitors": "Visiteurs uniques connus",
-    "UniqueVisitors": "Visiteurs uniques"
+    "UniqueVisitors": "Visiteurs uniques",
+    "VisitsFromSearchEngines": "Visites depuis les moteurs de recherche",
+    "VisitsFromAIAssistants": "Visites depuis les assistants IA",
+    "VisitsFromDirectEntry": "Visites en accès direct",
+    "VisitsFromWebsites": "Visites depuis les sites web",
+    "VisitsFromSocialNetworks": "Visites depuis les réseaux sociaux",
+    "VisitsFromCampaigns": "Visites depuis les campagnes",
+    "ShareOfVisitsFromSearchEngines": "Part des visites depuis les moteurs de recherche",
+    "ShareOfVisitsFromAIAssistants": "Part des visites depuis les assistants IA",
+    "ShareOfVisitsFromDirectEntry": "Part des visites en accès direct",
+    "ShareOfVisitsFromWebsites": "Part des visites depuis les sites web",
+    "ShareOfVisitsFromSocialNetworks": "Part des visites depuis les réseaux sociaux",
+    "ShareOfVisitsFromCampaigns": "Part des visites depuis les campagnes"
+  },
+  "OpenmostCommunication": {
+    "Dismiss": "Masquer",
+    "WidgetName": "Openmost : configuration du suivi des chatbots IA",
+    "AIChatbotsTitle": "Besoin d'aide pour configurer le suivi des chatbots IA ?",
+    "AIChatbotsBody": "Implementation Partner officiel de Matomo, Openmost peut configurer le suivi des chatbots IA pour vous, sur Matomo On-Premise ou Cloud.",
+    "AIChatbotsCta": "Faire configurer le suivi",
+    "TrackingPlanTitle": "Les événements doivent être configurés manuellement",
+    "TrackingPlanBody": "Les événements mesurent les clics, téléchargements, envois de formulaires ou lectures vidéo, à condition d'être suivis. Implementation Partner officiel de Matomo, Openmost conçoit et met en place un plan de marquage adapté à votre site.",
+    "TrackingPlanCta": "Construire mon plan de marquage",
+    "EventsEnhancedLink": "Tirez davantage de vos événements avec Events Enhanced"
   }
 }
