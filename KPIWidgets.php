@@ -19,6 +19,9 @@ class KPIWidgets extends \Piwik\Plugin
     public function registerEvents()
     {
         return array(
+            'Template.afterEventsReport' => 'renderOpenmostCommunicationAfterEvents',
+            'Widget.filterWidgets' => 'addOpenmostCommunicationWidgets',
+            'Template.beforeContent' => 'renderOpenmostCommunication',
             'AssetManager.getStylesheetFiles' => 'getStylesheetFiles',
             'Widget.addWidgetConfigs' => 'addWidgetConfigs',
         );
@@ -86,5 +89,20 @@ class KPIWidgets extends \Piwik\Plugin
             $config->setIsWidgetizable();
             $configs[] = $config;
         }
+    }
+
+    public function renderOpenmostCommunication(&$out, $layout, $module = '', $action = '')
+    {
+        OpenmostCommunication::beforeContent($out, (string) $layout, (string) $module, (string) $action, $this->getPluginName());
+    }
+
+    public function addOpenmostCommunicationWidgets($list)
+    {
+        OpenmostCommunication::filterWidgets($list, $this->getPluginName());
+    }
+
+    public function renderOpenmostCommunicationAfterEvents(&$out, $dataTable = null)
+    {
+        OpenmostCommunication::afterEventsReport($out, $this->getPluginName());
     }
 }

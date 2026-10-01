@@ -1,4 +1,7 @@
-.kpi-widgets {
+// Readout and evolution pill come from the core CoreVisualizations MetricValue.less and
+// EvolutionBadge.less; only the layout is overridden: large centered value, pill below.
+// Selectors are nested under .metricValue to outrank the core ones regardless of load order.
+.kpiWidget {
     padding: 0 20px 20px 20px;
     text-align: center;
     min-height: 70px;
@@ -7,61 +10,24 @@
     justify-content: center;
     align-items: center;
 
-    .kpi-value {
-        font-size: 2.5rem;
-        line-height: normal;
-    }
+    .metricValue {
+        max-width: 100%;
 
-    .kpi-evolution {
-        margin-top: 6px;
-        font-size: 0.7rem;
-        font-weight: 600;
-        padding: 2px 8px;
-        border-radius: 10px;
-        white-space: nowrap;
-    }
-
-    .kpi-positive {
-        background-color: #e8f5e9;
-        color: #2e7d32;
-    }
-
-    .kpi-negative {
-        background-color: #ffebee;
-        color: #c62828;
-    }
-
-    .kpi-neutral {
-        background-color: #f5f5f5;
-        color: #757575;
-    }
-}
-
-.kpi-widgets-dark-mode() {
-    .kpi-widgets {
-        .kpi-positive {
-            background-color: rgba(76, 175, 80, 0.18);
-            color: #81c784;
+        .metricValue__primary {
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
         }
 
-        .kpi-negative {
-            background-color: rgba(244, 67, 54, 0.18);
-            color: #ef9a9a;
-        }
-
-        .kpi-neutral {
-            background-color: rgba(255, 255, 255, 0.08);
-            color: #b0bec5;
+        .metricValue__number {
+            font-size: 2.5rem;
+            font-weight: normal;
+            line-height: normal;
+            max-width: 100%;
         }
     }
 }
 
-[data-theme-mode="dark"]:root {
-    .kpi-widgets-dark-mode();
-}
-
-[data-theme-mode="auto"]:root {
-    @media (prefers-color-scheme: dark) {
-        .kpi-widgets-dark-mode();
-    }
+.card .kpiWidget {
+    padding: 0;
 }

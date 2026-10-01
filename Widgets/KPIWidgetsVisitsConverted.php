@@ -2,16 +2,16 @@
 
 namespace Piwik\Plugins\KPIWidgets\Widgets;
 
-class KPIWidgetsConversions extends Base
+class KPIWidgetsVisitsConverted extends Base
 {
     protected static function getMetricKey(): string
     {
-        return 'nb_conversions';
+        return 'nb_visits_converted';
     }
 
     protected static function getWidgetName(): string
     {
-        return 'Goals_ColumnConversions';
+        return 'General_ColumnVisitsWithConversions';
     }
 
     protected static function getSubcategory(): string
@@ -21,6 +21,6 @@ class KPIWidgetsConversions extends Base
 
     protected static function getWidgetOrder(): int
     {
-        return 30;
+        return 33;
     }
 }
