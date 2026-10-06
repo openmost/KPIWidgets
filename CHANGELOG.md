@@ -14,6 +14,7 @@
 - Plugin homepage moved to openmost.com
 - Requires Matomo 5.13.0 or later (`>=5.13.0,<6.0.0-b1`)
 - Shorter Marketplace description that fits the plugin cards, and campaign parameters on the Openmost links of the README.
+- README: the plugin description now shows in the Description tab of the Matomo Marketplace.
 
 ### v5.2.0
 
