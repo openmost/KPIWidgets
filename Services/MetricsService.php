@@ -12,7 +12,6 @@ namespace Piwik\Plugins\KPIWidgets\Services;
 
 use Piwik\API\Request;
 use Piwik\Cache;
-use Piwik\Common;
 use Piwik\DataTable;
 use Piwik\Date;
 use Piwik\DataTable\Filter\CalculateEvolutionFilter;
@@ -334,9 +333,19 @@ class MetricsService
     public static function getRequestContext(): array
     {
         return [
-            'idSite' => Common::getRequestVar('idSite', 1, 'int'),
-            'period' => Common::getRequestVar('period', 'day', 'string'),
-            'date' => Common::getRequestVar('date', 'today', 'string'),
+            'idSite' => \Piwik\Request::fromRequest()->getIntegerParameter('idSite', 1),
+            'period' => self::getRequestString('period', 'day'),
+            'date' => self::getRequestString('date', 'today'),
         ];
+    }
+
+    /**
+     * An empty parameter (`date=`) is treated as missing and gets the default.
+     */
+    private static function getRequestString(string $name, string $default): string
+    {
+        $value = \Piwik\Request::fromRequest()->getStringParameter($name, $default);
+
+        return $value === '' ? $default : $value;
     }
 }

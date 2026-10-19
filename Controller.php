@@ -9,7 +9,6 @@
 namespace Piwik\Plugins\KPIWidgets;
 
 use Piwik\API\Request;
-use Piwik\Common;
 use Piwik\Metrics\Formatter;
 use Piwik\Piwik;
 use Piwik\Plugins\KPIWidgets\Services\MetricsService;
@@ -20,9 +19,10 @@ class Controller extends \Piwik\Plugin\Controller
     private function isWidgetized()
     {
         // Check if we're in dashboard/widgetized context
-        $module = Common::getRequestVar('module', '', 'string');
-        $action = Common::getRequestVar('action', '', 'string');
-        $widget = Common::getRequestVar('widget', 0, 'int');
+        $request = \Piwik\Request::fromRequest();
+        $module = $request->getStringParameter('module', '');
+        $action = $request->getStringParameter('action', '');
+        $widget = $request->getIntegerParameter('widget', 0);
 
         return $module === 'Widgetize' || $widget == 1 || $action === 'iframe';
     }
@@ -30,7 +30,7 @@ class Controller extends \Piwik\Plugin\Controller
     public function goalConversions()
     {
         $context = MetricsService::getRequestContext();
-        $idGoal = Common::getRequestVar('idGoal', 0, 'int');
+        $idGoal = \Piwik\Request::fromRequest()->getIntegerParameter('idGoal', 0);
 
         $result = MetricsService::getGoalMetrics(
             $context['idSite'],
@@ -63,7 +63,7 @@ class Controller extends \Piwik\Plugin\Controller
     public function goalConversionRate()
     {
         $context = MetricsService::getRequestContext();
-        $idGoal = Common::getRequestVar('idGoal', 0, 'int');
+        $idGoal = \Piwik\Request::fromRequest()->getIntegerParameter('idGoal', 0);
 
         $result = MetricsService::getGoalMetrics(
             $context['idSite'],
@@ -94,7 +94,7 @@ class Controller extends \Piwik\Plugin\Controller
     public function goalRevenue()
     {
         $context = MetricsService::getRequestContext();
-        $idGoal = Common::getRequestVar('idGoal', 0, 'int');
+        $idGoal = \Piwik\Request::fromRequest()->getIntegerParameter('idGoal', 0);
 
         $result = MetricsService::getGoalMetrics(
             $context['idSite'],
