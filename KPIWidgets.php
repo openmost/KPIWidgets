@@ -9,7 +9,6 @@
 namespace Piwik\Plugins\KPIWidgets;
 
 use Piwik\API\Request;
-use Piwik\Common;
 use Piwik\Piwik;
 use Piwik\Plugin\Manager as PluginManager;
 use Piwik\Widget\WidgetConfig;
@@ -38,7 +37,7 @@ class KPIWidgets extends \Piwik\Plugin
             return;
         }
 
-        $idSite = Common::getRequestVar('idSite', 0, 'int');
+        $idSite = \Piwik\Request::fromRequest()->getIntegerParameter('idSite', 0);
         if (empty($idSite)) {
             return;
         }
