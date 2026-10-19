@@ -1,5 +1,12 @@
 ## Changelog
 
+### v5.4.0
+
+- New Ecommerce subcategory, listed in the KPI menu after Goals on sites with ecommerce enabled: Orders, Ecommerce revenue, Average order value, Ecommerce conversion rate, Products sold, Visits with an order, Abandoned carts, Abandoned cart revenue and Products left in carts
+- With the Ecommerce Enhanced plugin: Purchasers, First-time purchasers, ARPU and ARPPU widgets, plus Refunded revenue and Net revenue with Ecommerce Enhanced Premium
+- Abandoned carts, abandoned cart revenue, products left in carts and refunded revenue count a decrease as positive
+- A widget whose source plugin was deactivated shows a dash instead of a value, cached values of that plugin are no longer served
+
 ### v5.3.0
 
 - New Acquisition subcategory: visits and share of visits from search engines, AI assistants, direct entry, websites, social networks and campaigns

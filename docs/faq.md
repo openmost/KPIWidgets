@@ -2,11 +2,11 @@
 
 **How do I add a KPI widget to a dashboard?**
 
-Open a dashboard, open the "Dashboard" menu, choose the KPI category, then a subcategory (Traffic, Acquisition, Behavior or Goals) and click the widget.
+Open a dashboard, open the "Dashboard" menu, choose the KPI category, then a subcategory (Traffic, Acquisition, Behavior, Goals or Ecommerce) and click the widget.
 
 **Why can't I find a widget, such as AI agent visits or page load time?**
 
-Widgets are hidden when their source is missing: AI agent and human visits need the AIAgents plugin, average page load time needs the PagePerformance plugin, and the AI assistants widgets need a Matomo version that tracks AI assistants as a referrer type.
+Widgets are hidden when their source is missing: AI agent and human visits need the AIAgents plugin, average page load time needs the PagePerformance plugin, the AI assistants widgets need a Matomo version that tracks AI assistants as a referrer type, and the Ecommerce widgets are only listed for sites with ecommerce enabled. Purchasers, first-time purchasers, ARPU and ARPPU need the Ecommerce Enhanced plugin, refunded revenue and net revenue need Ecommerce Enhanced Premium.
 
 **How is the evolution calculated?**
 

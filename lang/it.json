@@ -25,20 +25,39 @@
     "ShareOfVisitsFromDirectEntry": "Quota di visite da accesso diretto",
     "ShareOfVisitsFromWebsites": "Quota di visite dai siti web",
     "ShareOfVisitsFromSocialNetworks": "Quota di visite dai social network",
-    "ShareOfVisitsFromCampaigns": "Quota di visite dalle campagne"
+    "ShareOfVisitsFromCampaigns": "Quota di visite dalle campagne",
+    "Ecommerce": "E-commerce",
+    "Orders": "Ordini",
+    "EcommerceRevenue": "Ricavi e-commerce",
+    "AverageOrderValue": "Valore medio dell'ordine",
+    "EcommerceConversionRate": "Tasso di conversione e-commerce",
+    "ProductsSold": "Prodotti venduti",
+    "VisitsWithAnOrder": "Visite con ordine",
+    "AbandonedCarts": "Carrelli abbandonati",
+    "AbandonedCartRevenue": "Ricavi dei carrelli abbandonati",
+    "ProductsLeftInCarts": "Prodotti lasciati nei carrelli",
+    "Purchasers": "Acquirenti",
+    "FirstTimePurchasers": "Acquirenti alla prima volta",
+    "AverageRevenuePerUser": "Ricavo medio per utente (ARPU)",
+    "AverageRevenuePerPayingUser": "Ricavo medio per utente pagante (ARPPU)",
+    "RefundedRevenue": "Ricavi rimborsati",
+    "NetRevenue": "Ricavi netti"
   },
   "OpenmostCommunication": {
     "Dismiss": "Ignora",
     "Matomo6Title": "Matomo 6 è arrivato",
     "Matomo6Body": "Openmost è Implementation Partner ufficiale di Matomo e lavora con Matomo dal 2016. Aggiornare ora è più semplice che recuperare tra qualche mese: le novità e i miglioramenti di sicurezza arrivano prima su Matomo 6, e vi ci portiamo con report e tracciamento intatti.",
     "Matomo6Cta": "Pianifica il mio aggiornamento a Matomo 6",
-    "WidgetName": "Openmost: configurazione del tracciamento dei chatbot IA",
+    "WidgetName": "Openmost: consigli e novità",
     "AIChatbotsTitle": "Serve aiuto per configurare il tracciamento dei chatbot IA?",
     "AIChatbotsBody": "In qualità di Implementation Partner ufficiale di Matomo, Openmost può configurare il tracciamento dei chatbot IA per voi, su Matomo On-Premise o Cloud.",
     "AIChatbotsCta": "Richiedi la configurazione",
     "TrackingPlanTitle": "Gli eventi devono essere configurati manualmente",
     "TrackingPlanBody": "Gli eventi misurano clic, download, invii di moduli o riproduzioni video, se vengono tracciati. In qualità di Implementation Partner ufficiale di Matomo, Openmost progetta e implementa un piano di tracciamento adatto al vostro sito.",
     "TrackingPlanCta": "Creare il mio piano di tracciamento",
-    "EventsEnhancedLink": "Ottenete di più dai vostri eventi con Events Enhanced"
+    "EventsEnhancedLink": "Ottenete di più dai vostri eventi con Events Enhanced",
+    "EcommerceEnhancedTitle": "Novità: Ecommerce Enhanced per Matomo",
+    "EcommerceEnhancedBody": "Ecommerce Enhanced amplia notevolmente le funzionalità ecommerce di Matomo, con nuovi report su prodotti, brand, promozioni, coupon, funnel di checkout e acquirenti. Si integra facilmente nel vostro negozio online, senza sviluppi specifici. Plugin gratuito di Openmost.",
+    "EcommerceEnhancedCta": "Scoprite Ecommerce Enhanced"
   }
 }

@@ -25,20 +25,39 @@
     "ShareOfVisitsFromDirectEntry": "Share of visits from direct entry",
     "ShareOfVisitsFromWebsites": "Share of visits from websites",
     "ShareOfVisitsFromSocialNetworks": "Share of visits from social networks",
-    "ShareOfVisitsFromCampaigns": "Share of visits from campaigns"
+    "ShareOfVisitsFromCampaigns": "Share of visits from campaigns",
+    "Ecommerce": "Ecommerce",
+    "Orders": "Orders",
+    "EcommerceRevenue": "Ecommerce revenue",
+    "AverageOrderValue": "Average order value",
+    "EcommerceConversionRate": "Ecommerce conversion rate",
+    "ProductsSold": "Products sold",
+    "VisitsWithAnOrder": "Visits with an order",
+    "AbandonedCarts": "Abandoned carts",
+    "AbandonedCartRevenue": "Abandoned cart revenue",
+    "ProductsLeftInCarts": "Products left in carts",
+    "Purchasers": "Purchasers",
+    "FirstTimePurchasers": "First-time purchasers",
+    "AverageRevenuePerUser": "Average revenue per user (ARPU)",
+    "AverageRevenuePerPayingUser": "Average revenue per paying user (ARPPU)",
+    "RefundedRevenue": "Refunded revenue",
+    "NetRevenue": "Net revenue"
   },
   "OpenmostCommunication": {
     "Dismiss": "Dismiss",
     "Matomo6Title": "Matomo 6 is here",
     "Matomo6Body": "Openmost is an official Matomo Implementation Partner, working with Matomo since 2016. Upgrading now is simpler than catching up in a few months: new features and security improvements land on Matomo 6 first, and we move you there with your reports and tracking intact.",
     "Matomo6Cta": "Plan my Matomo 6 upgrade",
-    "WidgetName": "Openmost: AI chatbot tracking setup",
+    "WidgetName": "Openmost: tips and news",
     "AIChatbotsTitle": "Need help setting up AI chatbot tracking?",
     "AIChatbotsBody": "As an official Matomo Implementation Partner, Openmost can configure AI chatbot tracking for you, on Matomo On-Premise or Cloud.",
     "AIChatbotsCta": "Get it set up for me",
     "TrackingPlanTitle": "Events need to be set up manually",
     "TrackingPlanBody": "Events measure clicks, downloads, form submissions or video plays, once they are tracked. As an official Matomo Implementation Partner, Openmost designs and implements a tracking plan that fits your site.",
     "TrackingPlanCta": "Build my tracking plan",
-    "EventsEnhancedLink": "Get more out of your events with Events Enhanced"
+    "EventsEnhancedLink": "Get more out of your events with Events Enhanced",
+    "EcommerceEnhancedTitle": "New: Ecommerce Enhanced for Matomo",
+    "EcommerceEnhancedBody": "Ecommerce Enhanced greatly extends Matomo's ecommerce features with new reports on products, brands, promotions, coupons, checkout funnels and buyers. It fits easily into your online store, with no specific development. Free plugin by Openmost.",
+    "EcommerceEnhancedCta": "Discover Ecommerce Enhanced"
   }
 }

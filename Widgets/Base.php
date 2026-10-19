@@ -23,6 +23,7 @@ abstract class Base extends Widget
     public const SUBCATEGORY_ACQUISITION = 'KPIWidgets_Acquisition';
     public const SUBCATEGORY_BEHAVIOR = 'KPIWidgets_Behavior';
     public const SUBCATEGORY_GOALS = 'KPIWidgets_Goals';
+    public const SUBCATEGORY_ECOMMERCE = 'KPIWidgets_Ecommerce';
 
     // Format types
     public const FORMAT_NUMBER = 'number';
@@ -31,6 +32,8 @@ abstract class Base extends Widget
     public const FORMAT_DURATION = 'duration';
     public const FORMAT_MONEY = 'money';
     public const FORMAT_RAW = 'raw';
+
+    public const UNAVAILABLE_VALUE = '-';
 
     /**
      * @return string The metric key from API response
@@ -56,6 +59,30 @@ abstract class Base extends Widget
     protected static function getWidgetOrder(): int
     {
         return 100;
+    }
+
+    /**
+     * @return string API method returning a single row that holds the metric
+     */
+    protected static function getApiMethod(): string
+    {
+        return 'API.get';
+    }
+
+    /**
+     * @return array Parameters added to idSite, period and date for the API method
+     */
+    protected static function getApiParameters(): array
+    {
+        return [];
+    }
+
+    /**
+     * @return bool Whether a metric missing from the API result renders as unavailable instead of 0
+     */
+    protected static function isMissingMetricUnavailable(): bool
+    {
+        return false;
     }
 
     /**
@@ -105,22 +132,34 @@ abstract class Base extends Widget
         $context = MetricsService::getRequestContext();
         $metricKey = static::getMetricKey();
 
-        // Get metric value (uses cache)
-        $currentValue = MetricsService::getMetricValue(
+        $result = MetricsService::getReportMetrics(
+            static::getApiMethod(),
             $context['idSite'],
             $context['period'],
             $context['date'],
-            $metricKey
+            static::getApiParameters()
         );
+        $currentValue = MetricsService::findMetricValue($result, $metricKey);
 
-        // Get evolution (uses cache, returns null if disabled)
+        if ($currentValue === null && static::isMissingMetricUnavailable()) {
+            return VueEntry::renderKPIWidget([
+                'value' => self::UNAVAILABLE_VALUE,
+                'evolution' => null,
+                'isLowerValueBetter' => static::isLowerValueBetter(),
+            ]);
+        }
+
+        $currentValue ??= 0;
+
         $evolution = null;
         if (static::showEvolution()) {
-            $evolution = MetricsService::getEvolution(
+            $evolution = MetricsService::getReportEvolution(
+                static::getApiMethod(),
                 $context['idSite'],
                 $context['period'],
                 $context['date'],
-                $metricKey
+                $metricKey,
+                static::getApiParameters()
             );
         }
 
