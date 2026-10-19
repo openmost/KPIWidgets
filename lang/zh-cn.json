@@ -25,17 +25,36 @@
     "ShareOfVisitsFromDirectEntry": "直接进入的访问占比",
     "ShareOfVisitsFromWebsites": "来自网站的访问占比",
     "ShareOfVisitsFromSocialNetworks": "来自社交网络的访问占比",
-    "ShareOfVisitsFromCampaigns": "来自营销活动的访问占比"
+    "ShareOfVisitsFromCampaigns": "来自营销活动的访问占比",
+    "Ecommerce": "电子商务",
+    "Orders": "订单",
+    "EcommerceRevenue": "电子商务收入",
+    "AverageOrderValue": "平均订单价值",
+    "EcommerceConversionRate": "电子商务转化率",
+    "ProductsSold": "已售商品",
+    "VisitsWithAnOrder": "有订单的访问",
+    "AbandonedCarts": "放弃的购物车",
+    "AbandonedCartRevenue": "放弃购物车的收入",
+    "ProductsLeftInCarts": "留在购物车中的商品",
+    "Purchasers": "购买者",
+    "FirstTimePurchasers": "首次购买者",
+    "AverageRevenuePerUser": "每用户平均收入 (ARPU)",
+    "AverageRevenuePerPayingUser": "每付费用户平均收入 (ARPPU)",
+    "RefundedRevenue": "退款金额",
+    "NetRevenue": "净收入"
   },
   "OpenmostCommunication": {
     "Dismiss": "关闭",
-    "WidgetName": "Openmost：AI 聊天机器人跟踪设置",
+    "WidgetName": "Openmost：技巧与新闻",
     "AIChatbotsTitle": "需要帮助设置 AI 聊天机器人跟踪吗？",
     "AIChatbotsBody": "作为 Matomo 官方 Implementation Partner，Openmost 可以为您配置 AI 聊天机器人跟踪，适用于 Matomo On-Premise 或 Cloud。",
     "AIChatbotsCta": "请人帮我配置",
     "TrackingPlanTitle": "事件需要手动配置",
     "TrackingPlanBody": "事件可以衡量点击、下载、表单提交或视频播放，前提是已完成跟踪配置。作为 Matomo 官方 Implementation Partner，Openmost 为您的网站设计并实施合适的跟踪方案。",
     "TrackingPlanCta": "制定我的跟踪方案",
-    "EventsEnhancedLink": "使用 Events Enhanced 充分利用您的事件数据"
+    "EventsEnhancedLink": "使用 Events Enhanced 充分利用您的事件数据",
+    "EcommerceEnhancedTitle": "全新推出：适用于 Matomo 的 Ecommerce Enhanced",
+    "EcommerceEnhancedBody": "Ecommerce Enhanced 大幅扩展了 Matomo 的电子商务功能，新增关于商品、品牌、促销、优惠券、结账漏斗和买家的报告。无需专门开发，即可轻松接入您的网店。由 Openmost 提供的免费插件。",
+    "EcommerceEnhancedCta": "了解 Ecommerce Enhanced"
   }
 }

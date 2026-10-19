@@ -25,17 +25,36 @@
     "ShareOfVisitsFromDirectEntry": "Udział wizyt z wejść bezpośrednich",
     "ShareOfVisitsFromWebsites": "Udział wizyt ze stron internetowych",
     "ShareOfVisitsFromSocialNetworks": "Udział wizyt z sieci społecznościowych",
-    "ShareOfVisitsFromCampaigns": "Udział wizyt z kampanii"
+    "ShareOfVisitsFromCampaigns": "Udział wizyt z kampanii",
+    "Ecommerce": "E-commerce",
+    "Orders": "Zamówienia",
+    "EcommerceRevenue": "Przychód e-commerce",
+    "AverageOrderValue": "Średnia wartość zamówienia",
+    "EcommerceConversionRate": "Współczynnik konwersji e-commerce",
+    "ProductsSold": "Sprzedane produkty",
+    "VisitsWithAnOrder": "Wizyty z zamówieniem",
+    "AbandonedCarts": "Porzucone koszyki",
+    "AbandonedCartRevenue": "Przychód z porzuconych koszyków",
+    "ProductsLeftInCarts": "Produkty pozostawione w koszykach",
+    "Purchasers": "Kupujący",
+    "FirstTimePurchasers": "Nowi kupujący",
+    "AverageRevenuePerUser": "Średni przychód na użytkownika (ARPU)",
+    "AverageRevenuePerPayingUser": "Średni przychód na płacącego użytkownika (ARPPU)",
+    "RefundedRevenue": "Zwrócony przychód",
+    "NetRevenue": "Przychód netto"
   },
   "OpenmostCommunication": {
     "Dismiss": "Odrzuć",
-    "WidgetName": "Openmost: konfiguracja śledzenia chatbotów AI",
+    "WidgetName": "Openmost: porady i nowości",
     "AIChatbotsTitle": "Potrzebujesz pomocy w konfiguracji śledzenia chatbotów AI?",
     "AIChatbotsBody": "Jako oficjalny partner Matomo (Implementation Partner) Openmost może skonfigurować śledzenie chatbotów AI za Ciebie, w Matomo On-Premise lub Cloud.",
     "AIChatbotsCta": "Zleć konfigurację",
     "TrackingPlanTitle": "Zdarzenia trzeba skonfigurować ręcznie",
     "TrackingPlanBody": "Zdarzenia mierzą kliknięcia, pobrania, wysłane formularze czy odtworzenia wideo, pod warunkiem że są śledzone. Jako oficjalny partner Matomo (Implementation Partner) Openmost projektuje i wdraża plan śledzenia dopasowany do Twojej strony.",
     "TrackingPlanCta": "Stwórz mój plan śledzenia",
-    "EventsEnhancedLink": "Wyciśnij więcej ze swoich zdarzeń dzięki Events Enhanced"
+    "EventsEnhancedLink": "Wyciśnij więcej ze swoich zdarzeń dzięki Events Enhanced",
+    "EcommerceEnhancedTitle": "Nowość: Ecommerce Enhanced dla Matomo",
+    "EcommerceEnhancedBody": "Ecommerce Enhanced znacznie rozszerza funkcje e-commerce Matomo o nowe raporty dotyczące produktów, marek, promocji, kuponów, ścieżek checkoutu i kupujących. Łatwo integruje się z Twoim sklepem internetowym, bez dedykowanych prac programistycznych. Darmowa wtyczka od Openmost.",
+    "EcommerceEnhancedCta": "Poznaj Ecommerce Enhanced"
   }
 }

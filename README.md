@@ -13,19 +13,20 @@ Single-number KPI widgets for your Matomo dashboards, each with its evolution ag
   - **Acquisition**: Visits from search engines, AI assistants, direct entry, websites, social networks and campaigns, each with a matching "Share of visits" widget. The AI assistants widgets appear when your Matomo version tracks AI assistants as a referrer type.
   - **Behavior**: Bounce rate, Actions per visit, Average time on site, Max actions in one visit, Downloads, Unique downloads, Outlinks, Unique outlinks, Internal searches, Search keywords and Average page load time (needs the PagePerformance plugin).
   - **Goals**: Conversions, Conversion rate, Revenue and Visits with conversions for all goals, plus Conversions, Conversion rate and Revenue widgets for each goal of the site.
-- **Hidden when unavailable**: widgets whose source plugin or metric is missing on your Matomo are not listed.
+  - **Ecommerce** (sites with ecommerce enabled): Orders, Ecommerce revenue, Average order value, Ecommerce conversion rate, Products sold, Visits with an order, Abandoned carts, Abandoned cart revenue and Products left in carts. With the Ecommerce Enhanced plugin: Purchasers, First-time purchasers, Average revenue per user (ARPU) and Average revenue per paying user (ARPPU). With Ecommerce Enhanced Premium: Refunded revenue and Net revenue. Abandoned carts, their revenue, products left in carts and refunded revenue are metrics where lower is better.
+- **Hidden when unavailable**: widgets whose source plugin or metric is missing on your Matomo are not listed, and Ecommerce widgets are only listed for sites with ecommerce enabled. A widget kept on a dashboard after its source plugin was deactivated shows a dash instead of a value.
 - **Fast dashboards**: all widgets of a dashboard share the same API calls, and values are cached through the Matomo cache (5 minutes for running periods, 1 hour for closed ones). Access is checked on every request, cached values included.
 - Light and dark themes, translated into 12 languages.
 
 ### Requirements
 
 - Matomo 6.x (6.0.0 or later, below 7.0.0)
-- Optional: AIAgents for the AI agent and human visits widgets, PagePerformance for the page load time widget, Goals for the goal widgets
+- Optional: AIAgents for the AI agent and human visits widgets, PagePerformance for the page load time widget, Goals for the goal widgets, Ecommerce for the Ecommerce widgets, [Ecommerce Enhanced](https://openmost.com/matomo/extensions/ecommerce-enhanced?utm_source=matomo_marketplace&utm_medium=referral&utm_campaign=extensions&utm_content=kpiwidgets) for the purchasers and ARPU widgets and Ecommerce Enhanced Premium for the refund widgets
 
 ### Installation / Configuration
 
 1. Install KPI Widgets from the Marketplace (Administration > Platform > Marketplace) and activate it.
-2. Open a dashboard, open the "Dashboard" menu and pick widgets from the KPI category (Traffic, Acquisition, Behavior, Goals).
+2. Open a dashboard, open the "Dashboard" menu and pick widgets from the KPI category (Traffic, Acquisition, Behavior, Goals, Ecommerce).
 
 There are no settings. The plugin is available to every user who can view the site.
 

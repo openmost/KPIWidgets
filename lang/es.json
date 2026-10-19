@@ -25,17 +25,36 @@
     "ShareOfVisitsFromDirectEntry": "Porcentaje de visitas por entrada directa",
     "ShareOfVisitsFromWebsites": "Porcentaje de visitas desde sitios web",
     "ShareOfVisitsFromSocialNetworks": "Porcentaje de visitas desde redes sociales",
-    "ShareOfVisitsFromCampaigns": "Porcentaje de visitas desde campañas"
+    "ShareOfVisitsFromCampaigns": "Porcentaje de visitas desde campañas",
+    "Ecommerce": "Comercio electrónico",
+    "Orders": "Pedidos",
+    "EcommerceRevenue": "Ingresos de comercio electrónico",
+    "AverageOrderValue": "Valor medio del pedido",
+    "EcommerceConversionRate": "Tasa de conversión de comercio electrónico",
+    "ProductsSold": "Productos vendidos",
+    "VisitsWithAnOrder": "Visitas con pedido",
+    "AbandonedCarts": "Carritos abandonados",
+    "AbandonedCartRevenue": "Ingresos de carritos abandonados",
+    "ProductsLeftInCarts": "Productos dejados en carritos",
+    "Purchasers": "Compradores",
+    "FirstTimePurchasers": "Compradores por primera vez",
+    "AverageRevenuePerUser": "Ingreso medio por usuario (ARPU)",
+    "AverageRevenuePerPayingUser": "Ingreso medio por usuario de pago (ARPPU)",
+    "RefundedRevenue": "Ingresos reembolsados",
+    "NetRevenue": "Ingresos netos"
   },
   "OpenmostCommunication": {
     "Dismiss": "Descartar",
-    "WidgetName": "Openmost: configuración del seguimiento de chatbots de IA",
+    "WidgetName": "Openmost: consejos y novedades",
     "AIChatbotsTitle": "¿Necesita ayuda para configurar el seguimiento de chatbots de IA?",
     "AIChatbotsBody": "Como Implementation Partner oficial de Matomo, Openmost puede configurar el seguimiento de chatbots de IA por usted, en Matomo On-Premise o Cloud.",
     "AIChatbotsCta": "Solicitar la configuración",
     "TrackingPlanTitle": "Los eventos deben configurarse manualmente",
     "TrackingPlanBody": "Los eventos miden clics, descargas, envíos de formularios o reproducciones de vídeo, siempre que se registren. Como Implementation Partner oficial de Matomo, Openmost diseña e implementa un plan de etiquetado adaptado a su sitio.",
     "TrackingPlanCta": "Crear mi plan de etiquetado",
-    "EventsEnhancedLink": "Saque más partido a sus eventos con Events Enhanced"
+    "EventsEnhancedLink": "Saque más partido a sus eventos con Events Enhanced",
+    "EcommerceEnhancedTitle": "Novedad: Ecommerce Enhanced para Matomo",
+    "EcommerceEnhancedBody": "Ecommerce Enhanced amplía considerablemente las funciones de ecommerce de Matomo, con nuevos informes sobre productos, marcas, promociones, cupones, embudos de checkout y compradores. Se integra fácilmente en su tienda online, sin desarrollos específicos. Plugin gratuito de Openmost.",
+    "EcommerceEnhancedCta": "Descubrir Ecommerce Enhanced"
   }
 }

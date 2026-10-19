@@ -17,6 +17,7 @@ use Piwik\Date;
 use Piwik\DataTable\Filter\CalculateEvolutionFilter;
 use Piwik\Period\Factory as PeriodFactory;
 use Piwik\Piwik;
+use Piwik\Plugin\Manager as PluginManager;
 use Piwik\Site;
 
 class MetricsService
@@ -71,12 +72,45 @@ class MetricsService
      */
     public static function getGoalMetrics(int $idSite, string $period, string $date, int $idGoal): ?object
     {
-        return self::fetch('Goals.get', [
+        return self::getReportMetrics('Goals.get', $idSite, $period, $date, ['idGoal' => $idGoal]);
+    }
+
+    /**
+     * Get the first row of any single-row API method (Goals.get, EcommerceEnhanced.getBuyerKpis...) with caching
+     */
+    public static function getReportMetrics(
+        string $method,
+        int $idSite,
+        string $period,
+        string $date,
+        array $extraParams = []
+    ): ?object {
+        return self::fetch($method, array_merge([
             'idSite' => $idSite,
             'period' => $period,
             'date' => $date,
-            'idGoal' => $idGoal,
-        ]);
+        ], $extraParams));
+    }
+
+    /**
+     * Whether the plugin serving an API method is activated, "API.get" aggregates core reports and is always there.
+     */
+    public static function isApiMethodAvailable(string $method): bool
+    {
+        $module = strstr($method, '.', true);
+        if ($module === false || $module === '') {
+            return false;
+        }
+
+        if ($module === 'API') {
+            return true;
+        }
+
+        try {
+            return PluginManager::getInstance()->isPluginActivated($module);
+        } catch (\Exception $e) {
+            return false;
+        }
     }
 
     /**
@@ -85,6 +119,11 @@ class MetricsService
      */
     private static function fetch(string $method, array $params): ?object
     {
+        // Checked before both cache layers so values cached while a plugin was active are not served once it is not
+        if (!self::isApiMethodAvailable($method)) {
+            return null;
+        }
+
         $segment = Request::getRawSegmentFromRequest();
         if (!empty($segment)) {
             $params['segment'] = $segment;
@@ -181,6 +220,24 @@ class MetricsService
         string $metricKey,
         ?int $idGoal = null
     ): ?array {
+        if ($idGoal !== null) {
+            return self::getReportEvolution('Goals.get', $idSite, $period, $date, $metricKey, ['idGoal' => $idGoal]);
+        }
+
+        return self::getReportEvolution('API.get', $idSite, $period, $date, $metricKey);
+    }
+
+    /**
+     * Calculate evolution for a metric of any single-row API method
+     */
+    public static function getReportEvolution(
+        string $method,
+        int $idSite,
+        string $period,
+        string $date,
+        string $metricKey,
+        array $extraParams = []
+    ): ?array {
         if (!self::$evolutionEnabled) {
             return null;
         }
@@ -188,14 +245,12 @@ class MetricsService
         try {
             $previousDate = self::getPreviousPeriodDate($idSite, $period, $date);
 
-            // Get current and previous values
-            if ($idGoal !== null) {
-                $currentResult = self::getGoalMetrics($idSite, $period, $date, $idGoal);
-                $previousResult = self::getGoalMetrics($idSite, $period, $previousDate, $idGoal);
-            } else {
-                $currentResult = self::getMetrics($idSite, $period, $date);
-                $previousResult = self::getMetrics($idSite, $period, $previousDate);
+            $currentResult = self::getReportMetrics($method, $idSite, $period, $date, $extraParams);
+            if ($currentResult === null) {
+                return null;
             }
+
+            $previousResult = self::getReportMetrics($method, $idSite, $period, $previousDate, $extraParams);
 
             // Safely get metric values from result objects
             $currentValue = self::getMetricFromResult($currentResult, $metricKey);
@@ -205,10 +260,12 @@ class MetricsService
             $currentValue = self::parseNumericValue($currentValue);
             $previousValue = self::parseNumericValue($previousValue);
 
-            // Calculate evolution
+            // A negative previous value (net revenue after refunds) would flip the sign of a core evolution, so the
+            // change is measured against its magnitude
+            $baseValue = abs((float) $previousValue);
             $evolutionPercent = CalculateEvolutionFilter::calculate(
-                $currentValue,
-                $previousValue,
+                $baseValue + ($currentValue - $previousValue),
+                $baseValue,
                 1
             );
 
@@ -228,6 +285,20 @@ class MetricsService
         } catch (\Exception $e) {
             return null;
         }
+    }
+
+    /**
+     * Get a metric value, null when the source returned nothing or does not provide this metric for the period
+     */
+    public static function findMetricValue(?object $result, string $metricKey)
+    {
+        if ($result === null) {
+            return null;
+        }
+
+        $columns = (array) $result;
+
+        return array_key_exists($metricKey, $columns) ? $columns[$metricKey] : null;
     }
 
     /**
